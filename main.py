@@ -9,6 +9,10 @@ tgbot=Client(
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
-    await message.reply_text("👋 Hello Iam a test bot made by JOEL")
+    await message.reply_text("👋 Hello I'am a test bot made by <a href='https://t.me/creatorbeatz'>JOEL</a>\n\nUse /help for more details...")
+
+@tgbot.on_message(filters.command("help"))
+async def help_message(bot, message):
+    await message.reply_text("👋 Hello, if you need help contact my developer @creatorbeatz")
 
 tgbot.run()
