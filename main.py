@@ -1,4 +1,5 @@
 from pyrogram import Client, filters
+from info import START_IMG
 
 tgbot=Client(
     "Pyrogram Bot",
