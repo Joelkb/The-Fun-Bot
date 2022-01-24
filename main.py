@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from info import START_IMG
-from script import START_TXT
+from script import START_TXT, HELP_TXT
 
 tgbot=Client(
     "Pyrogram Bot",
@@ -19,6 +19,6 @@ async def start_message(bot, message):
 
 @tgbot.on_message(filters.command("help"))
 async def help_message(bot, message):
-    await message.reply_text("👋 Hello, if you need help contact my developer @creatorbeatz")
+    await message.reply_text(HELP_TXT)
 
 tgbot.run()
