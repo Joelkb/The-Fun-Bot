@@ -11,7 +11,12 @@ tgbot=Client(
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
-    await message.reply_text("👋 Hello I'am a test bot made by <a href='https://t.me/creatorbeatz'>JOEL</a>\n\nUse /help for more details...")
+    await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=script.START_TXT.format(message.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+)
 
 @tgbot.on_message(filters.command("help"))
 async def help_message(bot, message):
