@@ -1,0 +1,1 @@
+START_TXT = "HI I'AM A TEST BOT>>>"
