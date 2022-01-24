@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from info import START_IMG
+from info import START_IMG, HELP_IMG
 from script import START_TXT, HELP_TXT
 
 tgbot=Client(
@@ -19,6 +19,10 @@ async def start_message(bot, message):
 
 @tgbot.on_message(filters.command("help"))
 async def help_message(bot, message):
-    await message.reply_text(HELP_TXT)
+    await message.reply_photo(
+            photo=(HELP_IMG),
+            caption=(HELP_TXT),
+            parse_mode='html'
+)
 
 tgbot.run()
