@@ -13,7 +13,7 @@ tgbot=Client(
 async def start_message(bot, message):
     await message.reply_photo(
             photo=(START_IMG),
-            caption=script.START_TXT.format(message.from_user.mention),
+            caption=(START_TXT),
             reply_markup=reply_markup,
             parse_mode='html'
 )
