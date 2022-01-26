@@ -1,6 +1,7 @@
 from pyrogram import Client, filters
 from info import START_IMG, HELP_IMG
 from script import START_TXT, HELP_TXT
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 tgbot=Client(
     "Pyrogram Bot",
@@ -14,6 +15,9 @@ async def start_message(bot, message):
     await message.reply_photo(
             photo=(START_IMG),
             caption=(START_TXT),
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("Movie Group", url="t.me/filmy_harbour"
+            ]]),
             parse_mode='html'
 )
 
