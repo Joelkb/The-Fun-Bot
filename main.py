@@ -16,7 +16,9 @@ async def start_message(bot, message):
             photo=(START_IMG),
             caption=(START_TXT),
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("Movie Group", url="t.me/filmy_harbour")
+                InlineKeyboardButton("🍿 ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ 🍿", url="t.me/filmy_harbour"),
+                InlineKeyboardButton("🤴 Bot Owner 🤴", url="t.me/creatorbeatz")
+            ],[InlineKeyboardButton("💥 Join our Main Channel 💥", url="https://t.me/+LJRsBp82HiJhNDhl")
             ]]
             ),
             parse_mode='html'
