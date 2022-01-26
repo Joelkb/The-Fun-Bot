@@ -17,7 +17,8 @@ async def start_message(bot, message):
             caption=(START_TXT),
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("Movie Group", url="t.me/filmy_harbour"
-            ]]),
+            ]]
+            ),
             parse_mode='html'
 )
 
