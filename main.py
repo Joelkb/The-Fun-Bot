@@ -6,7 +6,7 @@ import random
 
 tgbot=Client(
     "Pyrogram Bot",
-    bot_token="5024393552:AAERJgw_5mZ9csN5XBvnf8iZMzySfKg2lI4",
+    bot_token="5227324370:AAEVsHHyO3wDoH2sOH-bD_XD3GWrmLZXKv0",
     api_id="8050217",
     api_hash="8a733396605cf07c31dfc79d7245270d"
 )
