@@ -28,7 +28,7 @@ async def start_message(bot, message):
 @tgbot.on_message(filters.command("help"))
 async def help_message(bot, message):
     await message.reply_photo(
-            photo=(HELP_IMG),
+            photo=random.choice(HELP_IMG),
             caption=(HELP_TXT),
             parse_mode='html'
 )
