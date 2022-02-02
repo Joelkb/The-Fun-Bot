@@ -30,6 +30,12 @@ async def help_message(bot, message):
     await message.reply_photo(
             photo=random.choice(HELP_IMG),
             caption=(HELP_TXT),
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("🍿 ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ 🍿", url="t.me/filmy_harbour"),
+                InlineKeyboardButton("🤴 Bot Owner 🤴", url="t.me/creatorbeatz")
+            ],[InlineKeyboardButton("💥 Join our Main Channel 💥", url="https://t.me/+LJRsBp82HiJhNDhl")
+            ]]
+            ),
             parse_mode='html'
 )
 
