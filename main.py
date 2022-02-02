@@ -49,9 +49,6 @@ async def howilook_message(bot, message):
 
 @tgbot.on_message(filters.command("dice"))
 async def dice_message(bot, message):
-    await message.reply_text(
-            text="🎲",
-            parse_mode='html'
-)
+    await message.reply_text("🎲")
 
 tgbot.run()
