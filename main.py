@@ -1,8 +1,9 @@
 from pyrogram import Client, filters
-from info import START_IMG, HELP_IMG, LOOK_IMG
+from info import START_IMG, HELP_IMG, LOOK_IMG, COMMAND_HAND_LER
 from script import START_TXT, HELP_TXT, LOOK_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import random
+from plugins.helper_functions.cust_p_filters import f_onw_fliter
 
 tgbot=Client(
     "Pyrogram Bot",
@@ -47,8 +48,25 @@ async def howilook_message(bot, message):
             parse_mode='html'
 )
 
-@tgbot.on_message(filters.command("dice"))
-async def dice_message(bot, message):
-    await app.send_dice(chat_id, "🎲")
+# EMOJI CONSTANTS
+DICE_E_MOJI = "🎲"
+# EMOJI CONSTANTS
+
+
+@tgbot.on_message(
+    filters.command(["roll", "dice"], COMMAND_HAND_LER) &
+    f_onw_fliter
+)
+async def roll_dice(client, message):
+    """ @RollaDie """
+    rep_mesg_id = message.message_id
+    if message.reply_to_message:
+        rep_mesg_id = message.reply_to_message.message_id
+    await client.send_dice(
+        chat_id=message.chat.id,
+        emoji=DICE_E_MOJI,
+        disable_notification=True,
+        reply_to_message_id=rep_mesg_id
+    )
 
 tgbot.run()
