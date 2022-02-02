@@ -2,8 +2,7 @@ from pyrogram import Client, filters
 from info import START_IMG, HELP_IMG, LOOK_IMG, COMMAND_HAND_LER
 from script import START_TXT, HELP_TXT, LOOK_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-import random
-from plugins.helper_functions.cust_p_filters import f_onw_fliter
+import random 
 
 tgbot=Client(
     "Pyrogram Bot",
@@ -54,8 +53,7 @@ DICE_E_MOJI = "🎲"
 
 
 @tgbot.on_message(
-    filters.command(["roll", "dice"], COMMAND_HAND_LER) &
-    f_onw_fliter
+    filters.command(["roll", "dice"], COMMAND_HAND_LER)
 )
 async def roll_dice(client, message):
     """ @RollaDie """
