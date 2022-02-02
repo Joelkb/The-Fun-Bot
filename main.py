@@ -40,7 +40,7 @@ async def help_message(bot, message):
 )
     
 @tgbot.on_message(filters.command("howilook"))
-async def help_message(bot, message):
+async def howilook_message(bot, message):
     await message.reply_photo(
             photo=random.choice(LOOK_IMG),
             caption=(LOOK_TXT),
@@ -48,7 +48,7 @@ async def help_message(bot, message):
 )
 
 @tgbot.on_message(filters.command("dice"))
-async def help_message(bot, message):
+async def dice_message(bot, message):
     await message.reply_text(
             text="🎲",
             parse_mode='html'
