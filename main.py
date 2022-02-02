@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
-from info import START_IMG, HELP_IMG
-from script import START_TXT, HELP_TXT
+from info import START_IMG, HELP_IMG, LOOK_IMG
+from script import START_TXT, HELP_TXT, LOOK_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import random
 
@@ -38,5 +38,11 @@ async def help_message(bot, message):
             ),
             parse_mode='html'
 )
+    
+@tgbot.on_message(filters.command("howilook"))
+async def help_message(bot, message):
+    await message.reply_photo(
+            photo=random.choice(LOOK_IMG),
+            caption=(LOOK_TXT),
 
 tgbot.run()
