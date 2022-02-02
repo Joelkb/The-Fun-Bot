@@ -47,4 +47,11 @@ async def help_message(bot, message):
             parse_mode='html'
 )
 
+@tgbot.on_message(filters.command("dice"))
+async def help_message(bot, message):
+    await message.reply_text(
+            text="🎲",
+            parse_mode='html'
+)
+
 tgbot.run()
