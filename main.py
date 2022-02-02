@@ -44,5 +44,7 @@ async def help_message(bot, message):
     await message.reply_photo(
             photo=random.choice(LOOK_IMG),
             caption=(LOOK_TXT),
+            parse_mode='html'
+)
 
 tgbot.run()
