@@ -17,9 +17,11 @@ async def start_message(bot, message):
             photo=random.choice(START_IMG),
             caption=(START_TXT),
             reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton ("➕ Add Me To Your Group ➕", url="https://t.me/the_fun_mallu_bot?startgroup=true")
+             ],[
                 InlineKeyboardButton("🍿 ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ 🍿", url="t.me/filmy_harbour"),
                 InlineKeyboardButton("🤴 Bot Owner 🤴", url="t.me/creatorbeatz")
-            ],[InlineKeyboardButton("💥 Join our Main Channel 💥", url="https://t.me/+LJRsBp82HiJhNDhl")
+             ],[InlineKeyboardButton("💥 Join our Main Channel 💥", url="https://t.me/+LJRsBp82HiJhNDhl")
             ]]
             ),
             parse_mode='html'
@@ -31,9 +33,11 @@ async def help_message(bot, message):
             photo=random.choice(HELP_IMG),
             caption=(HELP_TXT),
             reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton ("➕ Add Me To Your Group ➕", url="https://t.me/the_fun_mallu_bot?startgroup=true")
+             ],[
                 InlineKeyboardButton("🍿 ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ 🍿", url="t.me/filmy_harbour"),
                 InlineKeyboardButton("🤴 Bot Owner 🤴", url="t.me/creatorbeatz")
-            ],[InlineKeyboardButton("💥 Join our Main Channel 💥", url="https://t.me/+LJRsBp82HiJhNDhl")
+             ],[InlineKeyboardButton("💥 Join our Main Channel 💥", url="https://t.me/+LJRsBp82HiJhNDhl")
             ]]
             ),
             parse_mode='html'
