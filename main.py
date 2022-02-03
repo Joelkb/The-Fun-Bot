@@ -142,7 +142,7 @@ FUN_STRINGS = (
 )
 
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command("fun", COMMAND_HAND_LER)
 )
 async def runs(_, message):
