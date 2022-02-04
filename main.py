@@ -115,6 +115,44 @@ async def roll_dice(client, message):
         reply_to_message_id=rep_mesg_id
     )
 
+# EMOJI CONSTANTS
+PIN_BALL = "🎳"
+# EMOJI CONSTANTS
+
+@Client.on_message(
+    filters.command(["pinball", "tenpin"])
+)
+async def pinball_tenpin(client, message):
+    """ /pinball an @animatedpinball """
+    rep_mesg_id = message.message_id
+    if message.reply_to_message:
+        rep_mesg_id = message.reply_to_message.message_id
+    await client.send_dice(
+        chat_id=message.chat.id,
+        emoji=PIN_BALL,
+        disable_notification=True,
+        reply_to_message_id=rep_mesg_id
+    )
+
+# EMOJI CONSTANTS
+TRY_YOUR_LUCK = "🎰"
+# EMOJI CONSTANTS
+
+@Client.on_message(
+    filters.command(["luck", "cownd"])
+)
+async def luck_cownd(client, message):
+    """ /luck an @animatedluck """
+    rep_mesg_id = message.message_id
+    if message.reply_to_message:
+        rep_mesg_id = message.reply_to_message.message_id
+    await client.send_dice(
+        chat_id=message.chat.id,
+        emoji=TRY_YOUR_LUCK,
+        disable_notification=True,
+        reply_to_message_id=rep_mesg_id
+    )
+
 FUN_STRINGS = (
     "ഡാ നിന്റെ ഒക്കെ അമ്മയ്ക്കും പെങ്ങക്കും ഉള്ളതൊക്കെ തന്നാട എല്ലാർക്കും ഒള്ളത്.",
     "ഓ.. ധിക്കാരം... പഴേപോലെ തന്നെ....ഒരു മാറ്റോമില്ല.....ചുമ്മാതല്ല ഗതി പിടിക്കാത്തത്....!!!",
