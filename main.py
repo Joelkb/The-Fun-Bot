@@ -15,7 +15,7 @@ tgbot=Client(
 async def start_message(bot, message):
     await message.reply_photo(
             photo=random.choice(START_IMG),
-            caption=(START_TXT),
+            caption=(START_TXT.format(message.from_user.mention)),
             reply_markup=InlineKeyboardMarkup(
               [[
                 InlineKeyboardButton ("➕ Add Me To Your Group ➕", url="https://t.me/the_fun_mallu_bot?startgroup=true")
