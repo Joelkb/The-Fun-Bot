@@ -25,6 +25,6 @@ HELP_TXT = """<b>THIS IS MY HELP MESSAGE.
 
 <br>BOT MADE BY <a href='https://t.me/creatorbeatz'><i>JOEL KURIAN BIJU</i></a></b>"""
 
-LOOK_TXT = """<b>THIS IS HOW YOU LOOK 😂☝️
+LOOK_TXT = """<b>THIS IS HOW {} LOOK 😂☝️
 
 <br>FOR MORE FEATURES AND FUN, TRY SENDING /help COMMAND ✨</b>"""
