@@ -51,7 +51,7 @@ async def help_message(bot, message):
 async def howilook_message(bot, message):
     await message.reply_photo(
             photo=random.choice(LOOK_IMG),
-            caption=(LOOK_TXT),
+            caption=(LOOK_TXT.format(message.from_user.first_name)),
             parse_mode='html'
 )
 
