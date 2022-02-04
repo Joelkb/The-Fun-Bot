@@ -119,7 +119,7 @@ async def roll_dice(client, message):
 PIN_BALL = "🎳"
 # EMOJI CONSTANTS
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command(["pinball", "tenpin"])
 )
 async def pinball_tenpin(client, message):
@@ -138,7 +138,7 @@ async def pinball_tenpin(client, message):
 TRY_YOUR_LUCK = "🎰"
 # EMOJI CONSTANTS
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command(["luck", "cownd"])
 )
 async def luck_cownd(client, message):
