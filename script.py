@@ -1,4 +1,5 @@
-START_TXT = """<b>HEY {} I'AM A FUN BOT MADE BY <a href='https://t.me/creatorbeatz'><i>JOEL KURIAN BIJU</i></a>.
+START_TXT = """<b>Hey {},
+<br>I'M A FUN BOT MADE BY <a href='https://t.me/creatorbeatz'><i>JOEL KURIAN BIJU</i></a>.
 
 <br>TRY SENDING /help AND SEE MY POWERS 🔥
 
