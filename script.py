@@ -16,6 +16,10 @@ HELP_TXT = """<b>THIS IS MY HELP MESSAGE.
 
 <br>• TRY SENDING /fun COMMAND FOR MORE FUN 💥
 
+<br>• TRY SENDING /pinball OR /tenpin COMMAND TO PLAY PINBALL 🎳
+
+<br>• TRY SENDING /luck OR /cownd TO TEST YOUR LUCK 🎰
+
 <br>MORE FEATURES AND FUN ARE ON THE WAY ✨
 
 <br>BOT MADE BY <a href='https://t.me/creatorbeatz'><i>JOEL KURIAN BIJU</i></a></b>"""
