@@ -2,7 +2,8 @@ from pyrogram import Client, filters
 from info import START_IMG, HELP_IMG, LOOK_IMG, COMMAND_HAND_LER
 from script import START_TXT, HELP_TXT, LOOK_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-import random 
+import random
+from bot import Bot
 
 tgbot=Client(
     "Pyrogram Bot",
@@ -200,3 +201,4 @@ async def runs(_, message):
         await message.reply_text(effective_string)
 
 tgbot.run()
+Bot().run()
