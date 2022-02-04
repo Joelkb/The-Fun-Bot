@@ -1,9 +1,9 @@
 START_TXT = """<b>Hey {},
-<br>I'M A FUN BOT MADE BY <a href='https://t.me/creatorbeatz'><i>JOEL KURIAN BIJU</i></a>.
+<br>I'm a fun bot made by <a href='https://t.me/creatorbeatz'><i>Joel Kurian Biju</i></a>.
 
-<br>TRY SENDING /help AND SEE MY POWERS 🔥
+<br>Try sending /help and see my powers 🔥
 
-<br>MORE FEATURES AND FUN ARE ON THE WAY ✨</b>"""
+<br>More features and fun are on the way ✨</b>"""
 
 HELP_TXT = """<b>THIS IS MY HELP MESSAGE.
 
