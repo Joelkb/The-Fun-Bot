@@ -31,10 +31,10 @@ LOOK_TXT = """<b>This is how {} looks like 😂☝️
 <br>FOR MORE FEATURES AND FUN, TRY SENDING /help COMMAND ✨</b>"""
 
 ABOUT_TXT = """<b>Hey {},
-These are my details...
+These are my details...</b>
 ✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: 𝚃𝙷𝙴 𝙵𝚄𝙽 𝙱𝙾𝚃
 ✯ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁: <a href=https://t.me/creatorbeatz>𝙹𝙾𝙴𝙻 𝙺𝚄𝚁𝙸𝙰𝙽 𝙱𝙸𝙹𝚄</a>
 ✯ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈: 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼
 ✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: 𝙿𝚈𝚃𝙷𝙾𝙽 𝟹
 ✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: 𝙷𝙴𝚁𝙾𝙺𝚄
-✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]</b>"""
+✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]"""
