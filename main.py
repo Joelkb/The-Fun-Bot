@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from info import START_IMG, HELP_IMG, LOOK_IMG, COMMAND_HAND_LER
-from script import START_TXT, HELP_TXT, LOOK_TXT
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
 
 tgbot=Client(
@@ -17,35 +17,68 @@ async def start_message(bot, message):
             photo=random.choice(START_IMG),
             caption=(START_TXT.format(message.from_user.mention)),
             reply_markup=InlineKeyboardMarkup(
-              [[
-                InlineKeyboardButton ("➕ Add Me To Your Group ➕", url="https://t.me/the_fun_mallu_bot?startgroup=true")
-             ],[
-                InlineKeyboardButton("🍿 ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ 🍿", url="t.me/filmy_harbour"),
-                InlineKeyboardButton("🤴 Bot Owner 🤴", url="t.me/creatorbeatz")
-             ],[
-                InlineKeyboardButton("💥 Join our Main Channel 💥", url="https://t.me/+LJRsBp82HiJhNDhl")
-              ]]
+                  [[
+                    InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
+                ],[
+                    InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
+                    InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+                ],[
+                    InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+                    InlineKeyboardButton('😊 About', callback_data='about')
+                ],[
+                    InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
+                  ]]
             ),
             parse_mode='html'
 )
 
-@tgbot.on_message(filters.command("help"))
-async def help_message(bot, message):
-    await message.reply_photo(
-            photo=random.choice(HELP_IMG),
-            caption=(HELP_TXT),
-            reply_markup=InlineKeyboardMarkup(
-              [[
-                InlineKeyboardButton ("➕ Add Me To Your Group ➕", url="https://t.me/the_fun_mallu_bot?startgroup=true")
-             ],[
-                InlineKeyboardButton("🍿 ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ 🍿", url="t.me/filmy_harbour"),
-                InlineKeyboardButton("🤴 Bot Owner 🤴", url="t.me/creatorbeatz")
-             ],[
-                InlineKeyboardButton("💥 Join our Main Channel 💥", url="https://t.me/+LJRsBp82HiJhNDhl")
-              ]]
-            ),
-            parse_mode='html'
-)
+@tgbot.on_callback_query()
+    async def cb_checker(client: tgbot, query: CallbackQuery):
+        if query.data == "close_data":
+        await message.message.delete()
+
+        elif query.data == "start":
+        buttons = [[
+                    InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
+                ],[
+                    InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
+                    InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+                ],[
+                    InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+                    InlineKeyboardButton('😊 About', callback_data='about')
+                ],[
+                    InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
+                  ]]
+         reply_markup = InlineKeyboardMarkup(buttons)
+         await query.message.edit_text(
+             text=script.START_TXT.format(message.from_user.mention),
+             reply_markup=reply_markup,
+             parse_mode='html'
+         )
+
+         elif query.data == "help":
+         buttons = [[
+                     InlineKeyboardButton('🏠 Home', callback_data='start'),
+                     InlineKeyboardButton('😊 About', callback_data='about')
+                   ]]
+         reply_markup = InlineKeyboardMarkup(buttons)
+         await query.message.edit_text(
+             text=script.HELP_TXT.format(message.from_user.mention),
+             reply_markup=reply_markup,
+             parse_mode='html'
+         )
+
+         elif query.data == "about":
+         buttons = [[
+                     InlineKeyboardButton('🏠 Home', callback_data='start'),
+                     InlineKeyboardButton('ℹ️ Help', callback_data='help')
+                   ]]
+         reply_markup = InlineKeyboardMarkup(buttons)
+         await query.message.edit_text(
+             text=script.ABOUT_TXT.format(message.from_user.mention),
+             reply_markup=reply_markup,
+             parse_mode='html'
+         )
     
 @tgbot.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
