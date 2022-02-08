@@ -28,7 +28,7 @@ HELP_TXT = """<b>👋 Hey {},
 
 LOOK_TXT = """<b>This is how {} looks like 😂☝️
 
-<br>FOR MORE FEATURES AND FUN, TRY SENDING /help COMMAND ✨</b>"""
+<br>MORE FEATURES ARE ON THE WAY ✨</b>"""
 
 ABOUT_TXT = """<b>Hey {},
 These are my details...</b>
