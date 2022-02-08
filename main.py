@@ -33,9 +33,9 @@ async def start_message(bot, message):
 )
 
 @tgbot.on_callback_query()
-async def cb_checker(client: tgbot, query: CallbackQuery):
+async def cb_checker(bot, query: CallbackQuery):
         if query.data == "close_data":
-            await message.message.delete()
+            await query.message.delete()
 
         elif query.data == "start":
             buttons = [[
