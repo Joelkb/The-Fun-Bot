@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from info import START_IMG, HELP_IMG, LOOK_IMG, COMMAND_HAND_LER
+from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER
 from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
