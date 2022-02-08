@@ -58,9 +58,11 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "help":
             buttons = [[
-                     InlineKeyboardButton('🏠 Home', callback_data='start'),
-                     InlineKeyboardButton('😊 About', callback_data='about')
-                   ]]
+                          InlineKeyboardButton('🏠 Home', callback_data='start'),
+                          InlineKeyboardButton('😊 About', callback_data='about')
+                      ],[
+                          InlineKeyboardButton('🔐 Close', callback_data='close_data')
+                      ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(HELP_TXT.format(query.from_user.mention)),
@@ -70,9 +72,11 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "about":
             buttons = [[
-                     InlineKeyboardButton('🏠 Home', callback_data='start'),
-                     InlineKeyboardButton('ℹ️ Help', callback_data='help')
-                   ]]
+                          InlineKeyboardButton('🏠 Home', callback_data='start'),
+                          InlineKeyboardButton('ℹ️ Help', callback_data='help')
+                      ],[
+                          InlineKeyboardButton('🔐 Close', callback_data='close_data')
+                      ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(ABOUT_TXT.format(query.from_user.mention)),
