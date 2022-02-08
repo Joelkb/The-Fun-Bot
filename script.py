@@ -29,4 +29,4 @@ LOOK_TXT = """<b>This is how {} looks like 😂☝️
 
 <br>FOR MORE FEATURES AND FUN, TRY SENDING /help COMMAND ✨</b>"""
 
-ABOUT_TXT = """<b>Hello {} This is my About Text...</b>
+ABOUT_TXT = """<b>Hello {} This is my About Text...</b>"""
