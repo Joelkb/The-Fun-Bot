@@ -1,7 +1,7 @@
 START_TXT = """<b>Hey {},
 <br>I'm a fun bot made by <a href='https://t.me/creatorbeatz'><i>Joel Kurian Biju</i></a>.
 
-<br>Click on the 'Help' button and see my powers 🔥
+<br>Click on the 'ℹ️ Help' button and see my powers 🔥
 
 <br>More features and fun are on the way ✨</b>"""
 
