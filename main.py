@@ -56,29 +56,29 @@ async def cb_checker(client: tgbot, query: CallbackQuery):
                 parse_mode='html'
             )
 
-         elif query.data == "help":
-             buttons = [[
+        elif query.data == "help":
+            buttons = [[
                      InlineKeyboardButton('🏠 Home', callback_data='start'),
                      InlineKeyboardButton('😊 About', callback_data='about')
                    ]]
-             reply_markup = InlineKeyboardMarkup(buttons)
-             await query.message.edit_text(
-                 text=script.HELP_TXT.format(message.from_user.mention),
-                 reply_markup=reply_markup,
-                 parse_mode='html'
-             )
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.HELP_TXT.format(message.from_user.mention),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
 
-         elif query.data == "about":
-             buttons = [[
+        elif query.data == "about":
+            buttons = [[
                      InlineKeyboardButton('🏠 Home', callback_data='start'),
                      InlineKeyboardButton('ℹ️ Help', callback_data='help')
                    ]]
-             reply_markup = InlineKeyboardMarkup(buttons)
-             await query.message.edit_text(
-                 text=script.ABOUT_TXT.format(message.from_user.mention),
-                 reply_markup=reply_markup,
-                 parse_mode='html'
-             )
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.ABOUT_TXT.format(message.from_user.mention),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
     
 @tgbot.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
