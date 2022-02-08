@@ -38,7 +38,7 @@ async def cb_checker(client: tgbot, query: CallbackQuery):
             await message.message.delete()
 
         elif query.data == "start":
-        buttons = [[
+            buttons = [[
                     InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                 ],[
                     InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
@@ -57,7 +57,7 @@ async def cb_checker(client: tgbot, query: CallbackQuery):
          )
 
          elif query.data == "help":
-         buttons = [[
+             buttons = [[
                      InlineKeyboardButton('🏠 Home', callback_data='start'),
                      InlineKeyboardButton('😊 About', callback_data='about')
                    ]]
@@ -69,7 +69,7 @@ async def cb_checker(client: tgbot, query: CallbackQuery):
          )
 
          elif query.data == "about":
-         buttons = [[
+             buttons = [[
                      InlineKeyboardButton('🏠 Home', callback_data='start'),
                      InlineKeyboardButton('ℹ️ Help', callback_data='help')
                    ]]
