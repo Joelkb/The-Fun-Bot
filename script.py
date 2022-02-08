@@ -5,7 +5,7 @@ START_TXT = """<b>Hey {},
 
 <br>More features and fun are on the way ✨</b>"""
 
-HELP_TXT = """👋 Hey {},
+HELP_TXT = """<b>👋 Hey {},
 <br>Here Are My Commands.
 
 <br>• TRY SENDING /howilook COMMAND AND SEE HOW YOU LOOK 🔥
