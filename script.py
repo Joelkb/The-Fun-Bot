@@ -24,7 +24,7 @@ HELP_TXT = """👋 𝐇𝐞𝐲 <b>{},</b>
 
 <br>𝐌𝐎𝐑𝐄 𝐅𝐄𝐀𝐓𝐔𝐑𝐄𝐒 𝐀𝐍𝐃 𝐅𝐔𝐍 𝐀𝐑𝐄 𝐎𝐍 𝐓𝐇𝐄 𝐖𝐀𝐘 ✨
 
-<br>BOT MADE BY <a href='https://t.me/creatorbeatz'><i>JOEL KURIAN BIJU</i></a>"""
+<br>𝐁𝐎𝐓 𝐌𝐀𝐃𝐄 𝐁𝐘 <a href='https://t.me/creatorbeatz'><i>𝐉𝐎𝐄𝐋 𝐊𝐔𝐑𝐈𝐀𝐍 𝐁𝐈𝐉𝐔</i></a>"""
 
 LOOK_TXT = """𝐓𝐡𝐢𝐬 𝐢𝐬 𝐡𝐨𝐰 <b>{}</b> 𝐥𝐨𝐨𝐤𝐬 𝐥𝐢𝐤𝐞 😂☝️
 
