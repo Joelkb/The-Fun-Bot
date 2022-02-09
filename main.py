@@ -18,13 +18,13 @@ async def start_message(bot, message):
             caption=(START_TXT.format(message.from_user.mention)),
             reply_markup=InlineKeyboardMarkup(
                   [[
-                    InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
+                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                 ],[
                     InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
                     InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
                 ],[
-                    InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-                    InlineKeyboardButton('😊 About', callback_data='about')
+                    InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
                     InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                   ]]
@@ -39,13 +39,13 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "start":
             buttons = [[
-                    InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
+                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                 ],[
                     InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
                     InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
                 ],[
-                    InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-                    InlineKeyboardButton('😊 About', callback_data='about')
+                    InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
                     InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                   ]]
@@ -58,11 +58,11 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "help":
             buttons = [[
-                          InlineKeyboardButton('🏠 Home', callback_data='start'),
-                          InlineKeyboardButton('😊 About', callback_data='about')
+                          InlineKeyboardButton('🏠 ʜᴏᴍᴇ', callback_data='start'),
+                          InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
                       ],[
-                          InlineKeyboardButton('🔐 Close', callback_data='close_data'),
-                          InlineKeyboardButton('❤️ Source', callback_data='sourcehelp')
+                          InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_data'),
+                          InlineKeyboardButton('❤️ sᴏᴜʀᴄᴇ', callback_data='sourcehelp')
                       ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
@@ -73,11 +73,11 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "about":
             buttons = [[
-                          InlineKeyboardButton('🏠 Home', callback_data='start'),
-                          InlineKeyboardButton('ℹ️ Help', callback_data='help')
+                          InlineKeyboardButton('🏠 ʜᴏᴍᴇ', callback_data='start'),
+                          InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help')
                       ],[
-                          InlineKeyboardButton('🔐 Close', callback_data='close_data'),
-                          InlineKeyboardButton('❤️ Source', callback_data='source')
+                          InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_data'),
+                          InlineKeyboardButton('❤️ sᴏᴜʀᴄᴇ', callback_data='source')
                       ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
@@ -88,8 +88,8 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "source":
             buttons = [[
-                        InlineKeyboardButton('🔙 Back', callback_data='about'),
-                        InlineKeyboardButton('🔐 Close', callback_data='close_data')
+                        InlineKeyboardButton('🔙 ʙᴀᴄᴋ', callback_data='about'),
+                        InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_data')
                       ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
@@ -100,8 +100,8 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "sourcehelp":
             buttons = [[
-                        InlineKeyboardButton('🔙 Back', callback_data='help'),
-                        InlineKeyboardButton('🔐 Close', callback_data='close_data')
+                        InlineKeyboardButton('🔙 ʙᴀᴄᴋ', callback_data='help'),
+                        InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_data')
                       ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
