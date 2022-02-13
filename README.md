@@ -1,7 +1,7 @@
 ## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Lemon+milk&color=Y70000&lines=Welcome+to+The+Fun+Bot's+repo)](https://git.io/typing-svg)
 
 <p align="center">
-😎 𝐌𝐘 𝐃𝐄𝐕'𝐒 𝐒𝐎𝐂𝐈𝐀𝐋 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 😎
+😎 𝐌𝐘 𝐃𝐄𝐕'𝐒 𝐒𝐎𝐂𝐈𝐀𝐋 𝐏𝐑𝐎𝐅𝐈𝐋𝐄𝐒
 </p>
 <p align="center">
 <a href="https://t.me/creatorbeatz"><img alt="Telegram" src="https://img.shields.io/badge/Joelkb-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
