@@ -115,17 +115,17 @@ async def cb_checker(bot, query: CallbackQuery):
             )
         elif query.data == "mal_tran":
             buttons = [[
-                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
+                    InlineKeyboardButton('➕ എന്നെ നിങ്ങളുടെ ഗ്രൂപ്പിൽ ചേർക്കുക ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                 ],[
-                    InlineKeyboardButton('Switch Language', callback_data='lang')
+                    InlineKeyboardButton('ഭാഷ മാറുക', callback_data='lang')
                 ],[
-                    InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
-                    InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+                    InlineKeyboardButton('🤴ബോട്ട് ഉടമ🤴', url=f'https://t.me/creatorbeatz'),
+                    InlineKeyboardButton('🍿സിനിമാ ഗ്രൂപ്പ്🍿', url='https://t.me/filmy_harbour')
                 ],[
-                    InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('ℹ️ സഹായം', callback_data='help'),
+                    InlineKeyboardButton('😊 വിവരം', callback_data='about')
                 ],[
-                    InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
+                    InlineKeyboardButton('💥 ഞങ്ങളുടെ പ്രധാന ചാനലിൽ ചേരുക 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                   ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
@@ -136,17 +136,17 @@ async def cb_checker(bot, query: CallbackQuery):
        
         elif query.data == "hin_tran":
             buttons = [[
-                        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
+                        InlineKeyboardButton('➕ मुझे अपने ग्रुप में जोड़ें ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                      ],[
-                        InlineKeyboardButton('Switch Language', callback_data='lang')
+                        InlineKeyboardButton('भाषा बदलें', callback_data='lang')
                      ],[
-                        InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
-                        InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+                        InlineKeyboardButton('🤴बॉट मालिक🤴', url=f'https://t.me/creatorbeatz'),
+                        InlineKeyboardButton('🍿फिल्म ग्रुप🍿', url='https://t.me/filmy_harbour')
                      ],[
-                        InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
-                        InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+                        InlineKeyboardButton('ℹ️ मदद', callback_data='help'),
+                        InlineKeyboardButton('😊 विवरण', callback_data='about')
                      ],[
-                        InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
+                        InlineKeyboardButton('💥 हमारे मुख्य चैनल से जुड़ें 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                       ]]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
