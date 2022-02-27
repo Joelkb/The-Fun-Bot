@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER
-from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG
+from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, OWNER_INFO
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
 
@@ -20,9 +20,9 @@ async def start_message(bot, message):
                       [[
                         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                      ],[
-                        InlineKeyboardButton('Switch Language', callback_data='lang')
+                        InlineKeyboardButton('sᴡɪᴛᴄʜ ʟᴀɴɢᴜᴀɢᴇ', callback_data='lang')
                      ],[
-                        InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
+                        InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', callback_data="owner_info"),
                         InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
                      ],[
                         InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
@@ -44,9 +44,9 @@ async def cb_checker(bot, query: CallbackQuery):
             buttons = [[
                         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                      ],[
-                        InlineKeyboardButton('Switch Language', callback_data='lang')
+                        InlineKeyboardButton('sᴡɪᴛᴄʜ ʟᴀɴɢᴜᴀɢᴇ', callback_data='lang')
                      ],[
-                        InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', url=f'https://t.me/creatorbeatz'),
+                        InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', callback_data="owner_info"),
                         InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
                      ],[
                         InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
@@ -180,7 +180,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton('ഭാഷ മാറുക', callback_data='lang')
                 ],[
-                    InlineKeyboardButton('🤴ബോട്ട് ഉടമ🤴', url=f'https://t.me/creatorbeatz'),
+                    InlineKeyboardButton('🤴ബോട്ട് ഉടമ🤴', callback_data="owner_info"),
                     InlineKeyboardButton('🍿സിനിമാ ഗ്രൂപ്പ്🍿', url='https://t.me/filmy_harbour')
                 ],[
                     InlineKeyboardButton('ℹ️ സഹായം', callback_data='help'),
@@ -213,7 +213,7 @@ async def cb_checker(bot, query: CallbackQuery):
                      ],[
                         InlineKeyboardButton('भाषा बदलें', callback_data='lang')
                      ],[
-                        InlineKeyboardButton('🤴बॉट मालिक🤴', url=f'https://t.me/creatorbeatz'),
+                        InlineKeyboardButton('🤴बॉट मालिक🤴', callback_data="owner_info"),
                         InlineKeyboardButton('🍿फिल्म ग्रुप🍿', url='https://t.me/filmy_harbour')
                      ],[
                         InlineKeyboardButton('ℹ️ मदद', callback_data='help'),
@@ -264,6 +264,9 @@ async def cb_checker(bot, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
+
+        elif query.data == "owner_info":
+            await query.answer(OWNER_INFO, show_alert=True)
     
 @tgbot.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
