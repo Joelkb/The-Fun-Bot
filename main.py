@@ -266,8 +266,29 @@ async def cb_checker(bot, query: CallbackQuery):
             )
 
         elif query.data == "owner_info":
-            await query.answer(OWNER_INFO, show_alert=True)
-    
+            btn = [[
+                    InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ", url="t.me/creatorbeatz"),
+                    InlineKeyboardButton("🔙 ʙᴀᴄᴋ", callback_data="start")
+                  ]]
+            await query.message.edit_text(
+                text="⭗ ⭗ ⭗"
+            )
+            await query.message.edit_text(
+                text="⦿ ⭗ ⭗"
+            )
+            await query.message.edit_text(
+                text="⦿ ⦿ ⭗"
+            )
+            await query.message.edit_text(
+                text="⦿ ⦿ ⦿"
+            )
+            reply_markup = InlineKeyboardMarkup(btn)
+            await query.message.edit_text(
+                text=(OWNER_INFO),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+
 @tgbot.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
     await message.reply_photo(
