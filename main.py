@@ -267,8 +267,8 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "owner_info":
             btn = [[
-                    InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ", url="t.me/creatorbeatz"),
-                    InlineKeyboardButton("🔙 ʙᴀᴄᴋ", callback_data="start")
+                    InlineKeyboardButton("🔙 ʙᴀᴄᴋ", callback_data="start"),
+                    InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ", url="t.me/creatorbeatz")
                   ]]
             await query.message.edit_text(
                 text="⭗ ⭗ ⭗"
