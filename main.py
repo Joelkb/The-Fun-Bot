@@ -16,8 +16,7 @@ async def start_message(bot, message):
     await message.reply_photo(
             photo=random.choice(START_IMG),
             caption=(START_TXT.format(message.from_user.mention)),
-            reply_markup=InlineKeyboardMarkup(
-                      [[
+            buttons = [[
                         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                      ],[
                         InlineKeyboardButton('Switch Language', callback_data='lang')
@@ -30,19 +29,19 @@ async def start_message(bot, message):
                      ],[
                         InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                       ]]
-    await query.message.edit_text(
-        text="⭗ ⭗ ⭗"
-    )
-    await query.message.edit_text(
-        text="⦿ ⭗ ⭗"
-    )
-    await query.message.edit_text(
-        text="⦿ ⦿ ⭗"
-    )
-    await query.message.edit_text(
-        text="⦿ ⦿ ⦿"
-    )
-            ),
+            await query.message.edit_text(
+                text="⭗ ⭗ ⭗"
+            )
+            await query.message.edit_text(
+                text="⦿ ⭗ ⭗"
+            )
+            await query.message.edit_text(
+                text="⦿ ⦿ ⭗"
+            )
+            await query.message.edit_text(
+                text="⦿ ⦿ ⦿"
+            )
+            reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode='html'
 )
 
