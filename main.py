@@ -30,6 +30,18 @@ async def start_message(bot, message):
                      ],[
                         InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                       ]]
+    await query.message.edit_text(
+        text="⭗ ⭗ ⭗"
+    )
+    await query.message.edit_text(
+        text="⦿ ⭗ ⭗"
+    )
+    await query.message.edit_text(
+        text="⦿ ⦿ ⭗"
+    )
+    await query.message.edit_text(
+        text="⦿ ⦿ ⦿"
+    )
             ),
             parse_mode='html'
 )
