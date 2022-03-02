@@ -456,7 +456,7 @@ async def runs(_, message):
     else:
         await message.reply_text(effective_string)
 
-@tgbot.on_message(filters.text("Hi"))
+@tgbot.on_message(filters.text(text="Hi"))
 async def filter_handler(bot, message):
     await message.reply_text("Hello, How are you?")
 
