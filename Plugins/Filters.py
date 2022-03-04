@@ -1,11 +1,18 @@
 from pyrogram import Client, filters
 from info import MOVIE_PIC
 from scrypt import MOVIE_ENG_TXT
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 @Client.on_message(filters.regex("movie"))
 async def filter_handler(bot, message):
     await message.reply_photo(
-        photo=(MOVIE_PIC),
-        caption=(MOVIE_ENG_TXT),
-        parse_mode="html"
-    )
+            photo=(MOVIE_PIC),
+            caption=(MOVIE_ENG_TXT),
+            reply_markup=InlineKeyboardMarkup(
+                      [[
+                        InlineKeyboardButton('🇮🇳 Translate to Malayalam 🇮🇳', callback_data='movie_mal_txt')
+                      ]]
+            
+            ),
+            parse_mode="html"
+)
