@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER
+from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC
 from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, OWNER_INFO, MOVIE_ENG_TXT, MOVIE_MAL_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
@@ -33,6 +33,20 @@ async def start_message(bot, message):
             
             ),
             parse_mode='html'
+)
+
+@tgbot.on_message(filters.regex("movie") | filters.regex("Movie"))
+async def filter_handler(bot, message):
+    await message.reply_photo(
+            photo=(MOVIE_PIC),
+            caption=(MOVIE_ENG_TXT),
+            reply_markup=InlineKeyboardMarkup(
+                      [[
+                        InlineKeyboardButton('🇮🇳 Translate to Malayalam 🇮🇳', callback_data='movie_mal_txt')
+                      ]]
+            
+            ),
+            parse_mode="html"
 )
 
 @tgbot.on_callback_query()
