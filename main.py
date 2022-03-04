@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER
-from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, OWNER_INFO
+from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, OWNER_INFO, MOVIE_ENG_TXT, MOVIE_MAL_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
 
@@ -285,6 +285,27 @@ async def cb_checker(bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(OWNER_INFO),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+
+        elif query.data == "movie_mal_txt":
+            btn = [[
+                    InlineKeyboardButton("🇺🇲 Translate to English 🇺🇲", callback_data="movie_eng_txt")
+                  ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            await query.message.edit_text(
+                text=(MOVIE_MAL_TXT),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+        elif query.data == "movie_mal_txt":
+            btn = [[
+                    InlineKeyboardButton("🇮🇳 Translate to Malayalam 🇮🇳", callback_data="movie_mal_txt")
+                  ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            await query.message.edit_text(
+                text=(MOVIE_ENG_TXT),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
