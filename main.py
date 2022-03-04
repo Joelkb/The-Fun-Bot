@@ -309,17 +309,17 @@ async def cb_checker(bot, query: CallbackQuery):
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
-                text=(MOVIE_MAL_TXT),
+                text=(MOVIE_MAL_TXT.format(query.from_user.mention)),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
-        elif query.data == "movie_mal_txt":
+        elif query.data == "movie_eng_txt":
             btn = [[
                     InlineKeyboardButton("🇮🇳 Translate to Malayalam 🇮🇳", callback_data="movie_mal_txt")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
-                text=(MOVIE_ENG_TXT),
+                text=(MOVIE_ENG_TXT.format(query.from_user.mention)),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
