@@ -39,7 +39,7 @@ async def start_message(bot, message):
 async def filter_handler(bot, message):
     await message.reply_photo(
             photo=(MOVIE_PIC),
-            caption=(MOVIE_ENG_TXT.format(query.from_user.mention)),
+            caption=(MOVIE_ENG_TXT.format(message.from_user.mention)),
             reply_markup=InlineKeyboardMarkup(
                       [[
                         InlineKeyboardButton('🇮🇳 Translate to Malayalam 🇮🇳', callback_data='movie_mal_txt')
@@ -309,7 +309,7 @@ async def cb_checker(bot, query: CallbackQuery):
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
-                text=(MOVIE_MAL_TXT.format(query.from_user.mention)),
+                text=(MOVIE_MAL_TXT.format(message.from_user.mention)),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
@@ -319,7 +319,7 @@ async def cb_checker(bot, query: CallbackQuery):
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
-                text=(MOVIE_ENG_TXT.format(query.from_user.mention)),
+                text=(MOVIE_ENG_TXT.format(message.from_user.mention)),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
