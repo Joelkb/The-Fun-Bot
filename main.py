@@ -3,6 +3,8 @@ from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS
 from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, OWNER_INFO, MOVIE_ENG_TXT, MOVIE_MAL_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
+import logging
+logger = logging.getLogger(__name__)
 
 tgbot=Client(
     "Pyrogram Bot",
