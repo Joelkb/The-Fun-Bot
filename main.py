@@ -324,7 +324,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 parse_mode='html'
             )
 
-@tgbot.on_message(filters.command("howilook") & filters.user(ADMINS))
+@tgbot.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
     await message.reply_photo(
             photo=random.choice(LOOK_IMG),
@@ -490,5 +490,13 @@ async def runs(_, message):
         await message.reply_to_message.reply_text(effective_string)
     else:
         await message.reply_text(effective_string)
+        
+@tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
+async def log_file(bot, message):
+    """Send log file"""
+    try:
+        await message.reply_document('TelegramBot.log')
+    except Exception as e:
+        await message.reply(str(e))
 
 tgbot.run()
