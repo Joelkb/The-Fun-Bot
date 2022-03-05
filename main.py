@@ -4,6 +4,7 @@ from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRA
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
 import logging
+import os
 logger = logging.getLogger(__name__)
 
 tgbot=Client(
