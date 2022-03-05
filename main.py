@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC
+from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS
 from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, OWNER_INFO, MOVIE_ENG_TXT, MOVIE_MAL_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
@@ -324,7 +324,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 parse_mode='html'
             )
 
-@tgbot.on_message(filters.command("howilook"))
+@tgbot.on_message(filters.command("howilook") & filters.user(ADMINS))
 async def howilook_message(bot, message):
     await message.reply_photo(
             photo=random.choice(LOOK_IMG),
