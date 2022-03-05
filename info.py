@@ -7,3 +7,5 @@ LOOK_IMG = (environ.get('LOOK_IMG', 'https://telegra.ph/file/9fdd31655bc0ecf975a
 COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
 
 MOVIE_PIC = environ.get("MOVIE_PIC", "https://telegra.ph/file/3cdc36ae5925aa8fc2a50.jpg")
+
+ADMINS = environ.get("ADMINS", "1177577143")
