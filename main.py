@@ -14,6 +14,11 @@ tgbot=Client(
     api_hash="8a733396605cf07c31dfc79d7245270d"
 )
 
+logger = telebot.logger
+telebot.logger.basicConfig(filename='filename.log', level=logging.DEBUG,
+                    format=' %(asctime)s - %(levelname)s - %(message)s')
+
+
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
     await message.reply_photo(
