@@ -4,6 +4,7 @@ from script import START_TXT, HELP_TXT, LOOK_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRA
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
 import logging
+import logging.config
 import os
 logger = logging.getLogger(__name__)
 
@@ -14,8 +15,9 @@ tgbot=Client(
     api_hash="8a733396605cf07c31dfc79d7245270d"
 )
 
-logging.basicConfig(filename='Fun_Bot.txt', level=logging.DEBUG,
-                    format=' %(asctime)s - %(levelname)s - %(message)s')
+logging.config.fileConfig('logging.conf')
+logging.getLogger().setLevel(logging.INFO)
+
 
 @tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
