@@ -14,13 +14,13 @@ tgbot=Client(
     api_hash="8a733396605cf07c31dfc79d7245270d"
 )
 
-logging.basicConfig(filename='Fun_Bot.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='Fun_Bot.txt', caption="The Fun Bot's logs" encoding='utf-8', level=logging.DEBUG)
 
 @tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
     try:
-        await message.reply_document('Fun_Bot.log')
+        await message.reply_document('Fun_Bot.txt')
     except Exception as e:
         await message.reply(str(e))
 
