@@ -344,7 +344,7 @@ async def cb_checker(bot, query: CallbackQuery):
 @tgbot.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
     await message.reply_photo(
-            photo=random.choice(LOOK_IMG),
+            photo=random.choice(LOOK_IMG)
             caption=(LOOK_TXT.format(message.from_user.first_name)),
             parse_mode='html'
 )
