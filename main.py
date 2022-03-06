@@ -5,7 +5,6 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 import random
 import logging
 import os
-import telebot
 logger = logging.getLogger(__name__)
 
 tgbot=Client(
@@ -15,8 +14,8 @@ tgbot=Client(
     api_hash="8a733396605cf07c31dfc79d7245270d"
 )
 
-logger = telebot.logger
-telebot.logger.basicConfig(filename='filename.log', level=logging.DEBUG,
+logger = logging.logger
+logging.logger.basicConfig(filename='filename.log', level=logging.DEBUG,
                     format=' %(asctime)s - %(levelname)s - %(message)s')
 
 
