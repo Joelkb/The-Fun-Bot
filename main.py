@@ -302,18 +302,6 @@ async def cb_checker(bot, query: CallbackQuery):
                     InlineKeyboardButton("🔙 ʙᴀᴄᴋ", callback_data="start"),
                     InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ", url="t.me/creatorbeatz")
                   ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(OWNER_INFO),
