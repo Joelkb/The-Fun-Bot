@@ -23,7 +23,7 @@ logging.getLogger().setLevel(logging.INFO)
 async def log_file(bot, message):
     """Send log file"""
     try:
-        await message.reply_document('TelegramBot.log')
+        await message.reply_document('FunBot.txt')
     except Exception as e:
         await message.reply(str(e))
 
