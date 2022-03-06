@@ -14,7 +14,8 @@ tgbot=Client(
     api_hash="8a733396605cf07c31dfc79d7245270d"
 )
 
-logging.basicConfig(filename='Fun_Bot.txt', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='filename.log', level=logging.DEBUG,
+                    format=' %(asctime)s - %(levelname)s - %(message)s')
 
 @tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
