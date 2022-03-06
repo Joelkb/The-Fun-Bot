@@ -5,6 +5,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 import random
 import logging
 import os
+import telebot
 logger = logging.getLogger(__name__)
 
 tgbot=Client(
