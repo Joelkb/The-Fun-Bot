@@ -28,6 +28,11 @@ async def log_file(bot, message):
     except Exception as e:
         await message.reply(str(e))
 
+@tgbot.on_message(filters.command('logs'))
+async def log_user(bot, message):
+    await message.reply_text(
+        text="This is an Admin command, Not for you!"
+)
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
