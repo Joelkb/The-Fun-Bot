@@ -8,7 +8,12 @@ import logging.config
 import os
 logger = logging.getLogger(__name__)
 
-
+Client(
+    "Pyrogram Bot",
+    bot_token=BOT_TOKEN,
+    api_id=API_ID,
+    api_hash=API_HASH
+)
 
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
@@ -497,4 +502,4 @@ async def runs(_, message):
     else:
         await message.reply_text(effective_string)
 
-
+Client.run()
