@@ -1,4 +1,4 @@
-## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Lemon+milk&color=Y70000&lines=Welcome+to+The+Fun+Bot's+repo;A+Bot+with+Fun+and+enjoyment;More+Features+are+on+the+way...;Kindly+Fork+and+star+the+repo;Then+you+can+start+messing+up+with+your+edits)](https://git.io/typing-svg)
+## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Lemon+milk&color=Y70000&lines=Welcome+to+The+Fun+Bot's+repo;A+Bot+with+Fun+and+enjoyment;More+Features+are+on+the+way...;Kindly+Fork+and+star+the+repo;And+start+editing+the+repo...)](https://git.io/typing-svg)
 
 <p align="center">
 😎 𝐌𝐘 𝐃𝐄𝐕'𝐒 𝐒𝐎𝐂𝐈𝐀𝐋 𝐏𝐑𝐎𝐅𝐈𝐋𝐄𝐒
