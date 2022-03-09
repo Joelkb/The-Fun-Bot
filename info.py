@@ -20,7 +20,7 @@ MOVIE_PIC = environ.get("MOVIE_PIC", "https://telegra.ph/file/3cdc36ae5925aa8fc2
 
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1177577143').split()]
 
-API_ID = int(environ.get['API_ID'])
+API_ID = int(environ['API_ID'])
 
 API_HASH = environ.get("API_HASH", "")
 
