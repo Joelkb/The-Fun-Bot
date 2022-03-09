@@ -502,4 +502,4 @@ async def runs(_, message):
     else:
         await message.reply_text(effective_string)
 
-Client.run()
+Client.self.run()
