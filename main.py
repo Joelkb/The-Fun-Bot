@@ -8,22 +8,19 @@ import logging.config
 import os
 logger = logging.getLogger(__name__)
 
-class Bot(Client):
-
-    def __init__(self):
-        super().__init__(
-            session_name="The Fun Bot",
-            api_id=API_ID,
-            api_hash=API_HASH,
-            bot_token=BOT_TOKEN,
-        )
+tgbot=Client(
+    "Pyrogram Bot",
+    bot_token=BOT_TOKEN,
+    api_id=API_ID,
+    api_hash=API_HASH
+)
 
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 
 
-@Client.on_message(filters.command('logs') & filters.user(ADMINS))
+@tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
     try:
@@ -31,13 +28,13 @@ async def log_file(bot, message):
     except Exception as e:
         await message.reply(str(e))
 
-@Client.on_message(filters.command('logs'))
+@tgbot.on_message(filters.command('logs'))
 async def log_user(bot, message):
     await message.reply_text(
         text="This is an Admin command, Not for you!"
 )
 
-@Client.on_message(filters.command("start"))
+@tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
     await message.reply_photo(
             photo=random.choice(START_IMG),
@@ -61,7 +58,7 @@ async def start_message(bot, message):
             parse_mode='html'
 )
 
-@Client.on_message(filters.regex("movie") | filters.regex("Movie"))
+@tgbot.on_message(filters.regex("movie") | filters.regex("Movie"))
 async def filter_handler(bot, message):
     await message.reply_photo(
             photo=(MOVIE_PIC),
@@ -75,7 +72,7 @@ async def filter_handler(bot, message):
             parse_mode="html"
 )
 
-@Client.on_callback_query()
+@tgbot.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
         if query.data == "close_data":
             await query.message.delete()
@@ -338,7 +335,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 parse_mode='html'
             )
 
-@Client.on_message(filters.command("howilook"))
+@tgbot.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
     await message.reply_photo(
             photo=random.choice(LOOK_IMG),
@@ -351,7 +348,7 @@ DICE_E_MOJI = "🎲"
 # EMOJI CONSTANTS
 
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command(["roll", "dice"], COMMAND_HAND_LER)
 )
 async def roll_dice(client, message):
@@ -371,7 +368,7 @@ DART_E_MOJI = "🎯"
 # EMOJI CONSTANTS
 
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command(["throw", "dart"], COMMAND_HAND_LER)
 )
 async def throw_dart(client, message):
@@ -391,7 +388,7 @@ GOAL_E_MOJI = "⚽"
 # EMOJI CONSTANTS
 
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command(["goal", "shoot"], COMMAND_HAND_LER)
 )
 async def roll_dice(client, message):
@@ -410,7 +407,7 @@ async def roll_dice(client, message):
 PIN_BALL = "🎳"
 # EMOJI CONSTANTS
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command(["pinball", "tenpin"])
 )
 async def pinball_tenpin(client, message):
@@ -429,7 +426,7 @@ async def pinball_tenpin(client, message):
 TRY_YOUR_LUCK = "🎰"
 # EMOJI CONSTANTS
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command(["luck", "cownd"])
 )
 async def luck_cownd(client, message):
@@ -494,7 +491,7 @@ FUN_STRINGS = (
 )
 
 
-@Client.on_message(
+@tgbot.on_message(
     filters.command("fun", COMMAND_HAND_LER)
 )
 async def runs(_, message):
@@ -505,5 +502,4 @@ async def runs(_, message):
     else:
         await message.reply_text(effective_string)
 
-app = Bot()
-app.run()
+tgbot.run()
