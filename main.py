@@ -505,4 +505,5 @@ async def runs(_, message):
     else:
         await message.reply_text(effective_string)
 
-Bot.run()
+app = Bot()
+app.run()
