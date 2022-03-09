@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 tgbot=Client(
     "Pyrogram Bot",
     bot_token="BOT_TOKEN",
-    api_id="API_ID",
+    api_id=int("API_ID"),
     api_hash="API_HASH"
 )
 
