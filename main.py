@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS
+from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
@@ -10,9 +10,9 @@ logger = logging.getLogger(__name__)
 
 tgbot=Client(
     "Pyrogram Bot",
-    bot_token="5227324370:AAEVsHHyO3wDoH2sOH-bD_XD3GWrmLZXKv0",
-    api_id="8050217",
-    api_hash="8a733396605cf07c31dfc79d7245270d"
+    bot_token="BOT_TOKEN",
+    api_id="API_ID",
+    api_hash="API_HASH"
 )
 
 logging.config.fileConfig('logging.conf')
