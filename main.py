@@ -8,12 +8,15 @@ import logging.config
 import os
 logger = logging.getLogger(__name__)
 
-Client(
-    "Pyrogram Bot",
-    bot_token=BOT_TOKEN,
-    api_id=API_ID,
-    api_hash=API_HASH
-)
+class Bot(Client):
+
+    def __init__(self):
+        super().__init__(
+            session_name="The Fun Bot,
+            api_id=API_ID,
+            api_hash=API_HASH,
+            bot_token=BOT_TOKEN,
+        )
 
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
@@ -502,4 +505,4 @@ async def runs(_, message):
     else:
         await message.reply_text(effective_string)
 
-self.run()
+bot.run()
