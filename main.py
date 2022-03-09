@@ -505,4 +505,4 @@ async def runs(_, message):
     else:
         await message.reply_text(effective_string)
 
-bot.run()
+Bot.run()
