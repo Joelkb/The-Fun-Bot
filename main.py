@@ -339,16 +339,20 @@ async def cb_checker(bot, query: CallbackQuery):
                     InlineKeyboardButton("Our Movie Channels and groups", callback_data="movie_info")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
-            await query.send_sticker(chat_id=query.from_user.id, sticker='CAACAgUAAxkBAAEDfVVhubi143Zvx6k3SDCUVj2pzq7p8wAC0wMAAvziWFQ0UurR-C0AAYEjBA')
+            await query.send_photo(
+                photo=(MV_PIC),
+                caption=(MV_TXT),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
 
         elif query.data == "movie_info":
             btn = [[
                     InlineKeyboardButton("🔐 Close", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
-            await query.send_photo(
-                photo=(MV_PIC),
-                caption=(MV_TXT),
+            await query.message.edit_text(
+                text=(MV_TXT),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
