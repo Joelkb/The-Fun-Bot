@@ -339,7 +339,7 @@ async def cb_checker(bot, query: CallbackQuery):
                     InlineKeyboardButton("🔐 Close", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.send_text(
+            await query.message.reply_text(
                 text=(MV_TXT),
                 reply_markup=reply_markup,
                 parse_mode='html'
