@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
-from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN
-from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO
+from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC
+from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
 import logging
@@ -46,7 +46,7 @@ async def start_message(bot, message):
                         InlineKeyboardButton('sᴡɪᴛᴄʜ ʟᴀɴɢᴜᴀɢᴇ', callback_data='lang')
                      ],[
                         InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', callback_data="owner_info"),
-                        InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+                        InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', callback_data="movie_grp")
                      ],[
                         InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
                         InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
@@ -84,7 +84,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         InlineKeyboardButton('sᴡɪᴛᴄʜ ʟᴀɴɢᴜᴀɢᴇ', callback_data='lang')
                      ],[
                         InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', callback_data="owner_info"),
-                        InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', url='https://t.me/filmy_harbour')
+                        InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', callback_data="movie_grp")
                      ],[
                         InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
                         InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
@@ -218,7 +218,7 @@ async def cb_checker(bot, query: CallbackQuery):
                     InlineKeyboardButton('ഭാഷ മാറുക', callback_data='lang')
                 ],[
                     InlineKeyboardButton('🤴ബോട്ട് ഉടമ🤴', callback_data="owner_info"),
-                    InlineKeyboardButton('🍿സിനിമാ ഗ്രൂപ്പ്🍿', url='https://t.me/filmy_harbour')
+                    InlineKeyboardButton('🍿സിനിമാ ഗ്രൂപ്പ്🍿', callback_data="movie_grp")
                 ],[
                     InlineKeyboardButton('ℹ️ സഹായം', callback_data='help'),
                     InlineKeyboardButton('😊 വിവരം', callback_data='about')
@@ -251,7 +251,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         InlineKeyboardButton('भाषा बदलें', callback_data='lang')
                      ],[
                         InlineKeyboardButton('🤴बॉट मालिक🤴', callback_data="owner_info"),
-                        InlineKeyboardButton('🍿फिल्म ग्रुप🍿', url='https://t.me/filmy_harbour')
+                        InlineKeyboardButton('🍿फिल्म ग्रुप🍿', callback_data="movie_grp")
                      ],[
                         InlineKeyboardButton('ℹ️ मदद', callback_data='help'),
                         InlineKeyboardButton('😊 विवरण', callback_data='about')
@@ -331,6 +331,24 @@ async def cb_checker(bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.edit_text(
                 text=(MOVIE_ENG_TXT.format(query.from_user.mention)),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+        elif query.data == "movie_grp":
+            btn = [[
+                    InlineKeyboardButton("Our Movie Channels and groups", callback_data="movie_info")
+                  ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            await query.send_sticker(sticker='CAACAgUAAxkBAAEELUhiMeeW8dbclaGNNBcDtmut4TsUSgACHwgAAobVkFX-g3BHWJmezCME')
+
+        elif query.data == "movie_info":
+            btn = [[
+                    InlineKeyboardButton("🔐 Close", callback_data="close_data")
+                  ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            await query.send_photo(
+                photo=(MV_PIC),
+                caption=(MV_TXT),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
