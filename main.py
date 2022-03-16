@@ -339,7 +339,7 @@ async def cb_checker(bot, query: CallbackQuery):
                     InlineKeyboardButton("Our Movie Channels and groups", callback_data="movie_info")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
-            await query.send_sticker(sticker='CAACAgUAAxkBAAEELUhiMeeW8dbclaGNNBcDtmut4TsUSgACHwgAAobVkFX-g3BHWJmezCME')
+            await query.send_sticker(chat_id=query.from_user.id, sticker='CAACAgUAAxkBAAEELUhiMeeW8dbclaGNNBcDtmut4TsUSgACHwgAAobVkFX-g3BHWJmezCME')
 
         elif query.data == "movie_info":
             btn = [[
