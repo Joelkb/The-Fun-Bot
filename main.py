@@ -341,7 +341,7 @@ async def cb_checker(bot, query: CallbackQuery):
                     InlineKeyboardButton("ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+asOwq8hpxSgwOTY9")
                  ],[
                     InlineKeyboardButton("ɴᴇᴡ ʀᴇʟᴇᴀsᴇs", url="https://t.me/+IMqrt1smwgo2OGM1"),
-                    InlineKeyboardButton("🔐 Close", callback_data="close_data")
+                    InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.reply_photo(
