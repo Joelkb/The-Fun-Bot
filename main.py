@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN
+from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import random
@@ -336,11 +336,20 @@ async def cb_checker(bot, query: CallbackQuery):
             )
         elif query.data == "movie_grp":
             btn = [[
+                    InlineKeyboardButton("Movie channels and groups", callback_data="grp_info")
+                  ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            await query.message.reply_sticker(
+                sticker="CAACAgUAAxkBAAEELUhiMeeW8dbclaGNNBcDtmut4TsUSgACHwgAAobVkFX-g3BHWJmezCME"
+            )
+        elif query.data == "grp_info":
+            btn = [[
                     InlineKeyboardButton("🔐 Close", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.reply_text(
-                text=(MV_TXT),
+                photo=(MV_PIC),
+                caption=(MV_TXT),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
