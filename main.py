@@ -337,6 +337,10 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "movie_grp":
             btn = [[
+                    InlineKeyboardButton("ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ɢʀᴏᴜᴘ", url="https://t.me/+5olNhPeyW31jYjBl"),
+                    InlineKeyboardButton("ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+asOwq8hpxSgwOTY9")
+                 ],[
+                    InlineKeyboardButton("ɴᴇᴡ ʀᴇʟᴇᴀsᴇs", url="https://t.me/+IMqrt1smwgo2OGM1"),
                     InlineKeyboardButton("🔐 Close", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
