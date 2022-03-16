@@ -340,14 +340,17 @@ async def cb_checker(bot, query: CallbackQuery):
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.reply_sticker(
-                sticker="CAACAgUAAxkBAAEELUhiMeeW8dbclaGNNBcDtmut4TsUSgACHwgAAobVkFX-g3BHWJmezCME"
+                sticker="CAACAgUAAxkBAAEELUhiMeeW8dbclaGNNBcDtmut4TsUSgACHwgAAobVkFX-g3BHWJmezCME",
+                reply_markup=reply_markup,
+                parse_mode='html'
             )
+        
         elif query.data == "grp_info":
             btn = [[
                     InlineKeyboardButton("🔐 Close", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.reply_text(
+            await query.message.reply_photo(
                 photo=(MV_PIC),
                 caption=(MV_TXT),
                 reply_markup=reply_markup,
