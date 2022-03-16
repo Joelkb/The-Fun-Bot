@@ -341,8 +341,7 @@ async def cb_checker(bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(btn)
             await query.message.reply_sticker(
                 sticker="CAACAgUAAxkBAAEELUhiMeeW8dbclaGNNBcDtmut4TsUSgACHwgAAobVkFX-g3BHWJmezCME",
-                reply_markup=reply_markup,
-                parse_mode='html'
+                reply_markup=reply_markup
             )
         
         elif query.data == "grp_info":
