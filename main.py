@@ -334,17 +334,8 @@ async def cb_checker(bot, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
+
         elif query.data == "movie_grp":
-            btn = [[
-                    InlineKeyboardButton("Movie channels and groups", callback_data="grp_info")
-                  ]]
-            reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.reply_sticker(
-                sticker="CAACAgUAAxkBAAEELUhiMeeW8dbclaGNNBcDtmut4TsUSgACHwgAAobVkFX-g3BHWJmezCME",
-                reply_markup=reply_markup
-            )
-        
-        elif query.data == "grp_info":
             btn = [[
                     InlineKeyboardButton("🔐 Close", callback_data="close_data")
                   ]]
