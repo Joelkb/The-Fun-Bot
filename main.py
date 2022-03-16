@@ -336,18 +336,6 @@ async def cb_checker(bot, query: CallbackQuery):
             )
         elif query.data == "movie_grp":
             btn = [[
-                    InlineKeyboardButton("Our Movie Channels and groups", callback_data="movie_info")
-                  ]]
-            reply_markup = InlineKeyboardMarkup(btn)
-            await query.send_photo(
-                photo=(MV_PIC),
-                caption=(MV_TXT),
-                reply_markup=reply_markup,
-                parse_mode='html'
-            )
-
-        elif query.data == "movie_info":
-            btn = [[
                     InlineKeyboardButton("🔐 Close", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
@@ -356,6 +344,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
+            
 
 @tgbot.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
