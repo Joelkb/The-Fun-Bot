@@ -78,7 +78,7 @@ async def admin_handler(bot, message):
             sticker='CAACAgUAAxkBAAEEMnhiNA722UYMtilQ36wzPU1QTWLZ7gACqQADyJRkFOv8RlMxwyrKIwQ',
             reply_markup=InlineKeyboardMarkup(
                       [[
-                        InlineKeyboardButton("✅ REPORT SENT ✅", url="Report has been successfully send ✅", show_alert=True)
+                        InlineKeyboardButton("✅ REPORT SENT ✅", url="t.me/filmy_harbour")
                       ]]
             )
 )
