@@ -83,9 +83,11 @@ async def admin_handler(bot, message):
             )
 
 )
-    await asyncio.sleep(5)
-    await k.delete()
-    await message.delete()
+
+await asyncio.sleep(5)
+await k.delete()
+await message.delete()
+
 
 @tgbot.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
