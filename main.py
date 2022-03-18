@@ -78,7 +78,7 @@ async def admin_handler(bot, message):
             sticker='CAACAgUAAxkBAAEEMnhiNA722UYMtilQ36wzPU1QTWLZ7gACqQADyJRkFOv8RlMxwyrKIwQ',
             reply_markup=InlineKeyboardMarkup(
                       [[
-                        InlineKeyboardButton("✅ REPORT SENT ✅", url="t.me/filmy_harbour")
+                        InlineKeyboardButton("✅ REPORT SENT ✅", callback_data="report")
                       ]]
             )
 )
@@ -361,6 +361,9 @@ async def cb_checker(bot, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
+            
+        elif query.data == "report":
+            await query.answer("Report has been successfully send ✅", show_alert=True)
             
 
 @tgbot.on_message(filters.command("howilook"))
