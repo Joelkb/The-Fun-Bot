@@ -83,8 +83,7 @@ async def admin_handler(bot, message):
             )
 
 )
-    if:
-        k.send:
+    if k.send:
             await asyncio.sleep(5)
             await k.delete()
             await message.delete()
