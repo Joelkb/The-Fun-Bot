@@ -83,10 +83,11 @@ async def admin_handler(bot, message):
             )
 
 )
-    elif:
-        await asyncio.sleep(5)
-        await k.delete()
-        await message.delete()
+    if:
+        k.send:
+            await asyncio.sleep(5)
+            await k.delete()
+            await message.delete()
 
 
 @tgbot.on_callback_query()
