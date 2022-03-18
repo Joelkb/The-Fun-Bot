@@ -24,7 +24,7 @@ logging.getLogger("Pyrogram Bot").setLevel(logging.ERROR)
 async def log_file(bot, message):
     """Send log file"""
     try:
-        await message.reply_document('FunBot.txt')
+        await message.reply_document('FunBot.log')
     except Exception as e:
         await message.reply(str(e))
 
