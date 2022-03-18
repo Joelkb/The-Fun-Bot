@@ -74,7 +74,14 @@ async def filter_handler(bot, message):
 
 @tgbot.on_message(filters.regex("@admin") | filters.regex("@admins"))
 async def admin_handler(bot, message):
-    await message.reply_sticker(sticker="CAACAgUAAxkBAAEEMnhiNA722UYMtilQ36wzPU1QTWLZ7gACqQADyJRkFOv8RlMxwyrKIwQ")
+    await message.reply_sticker(
+            sticker="CAACAgUAAxkBAAEEMnhiNA722UYMtilQ36wzPU1QTWLZ7gACqQADyJRkFOv8RlMxwyrKIwQ",
+            reply_markup=InlineKeyboardMarkup(
+                      [[
+                        InlineKeyboardButton("✅ REPORT SENT ✅", url="Report has been successfully send ✅", show_alert=True)
+                      ]]
+            )
+)
 
 @tgbot.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
