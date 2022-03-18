@@ -17,7 +17,7 @@ tgbot=Client(
 
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
-logging.getLogger("pyrogram").setLevel(logging.ERROR)
+logging.getLogger("Pyrogram Bot").setLevel(logging.ERROR)
 
 
 @tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
@@ -74,7 +74,7 @@ async def filter_handler(bot, message):
 
 @tgbot.on_message(filters.regex("@admin") | filters.regex("@admins"))
 async def admin_handler(bot, message):
-    await message.send_sticker(
+    await message.reply_sticker(
             sticker='CAACAgUAAxkBAAEEMnhiNA722UYMtilQ36wzPU1QTWLZ7gACqQADyJRkFOv8RlMxwyrKIwQ',
             reply_markup=InlineKeyboardMarkup(
                       [[
