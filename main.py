@@ -72,6 +72,10 @@ async def filter_handler(bot, message):
             parse_mode="html"
 )
 
+@tgbot.on_message(filters.regex("@admin") | filters.regex("@admins"))
+async def admin_handler(bot, message):
+    await message.reply_sticker(sticker="CAACAgUAAxkBAAEEMnhiNA722UYMtilQ36wzPU1QTWLZ7gACqQADyJRkFOv8RlMxwyrKIwQ")
+
 @tgbot.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
         if query.data == "close_data":
