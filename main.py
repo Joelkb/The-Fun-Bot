@@ -355,7 +355,7 @@ async def cb_checker(bot, query: CallbackQuery):
                     InlineKeyboardButton("ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ɢʀᴏᴜᴘ", url="https://t.me/+5olNhPeyW31jYjBl"),
                     InlineKeyboardButton("ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+asOwq8hpxSgwOTY9")
                  ],[
-                    InlineKeyboardButton("ɴᴇᴡ ʀᴇʟᴇᴀsᴇs", url="https://t.me/+IMqrt1smwgo2OGM1"),
+                    InlineKeyboardButton("ɴᴇᴡ ʀᴇʟᴇᴀsᴇs", url="https://t.me/+1Zr7U1TCCMw2YmJl"),
                     InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
