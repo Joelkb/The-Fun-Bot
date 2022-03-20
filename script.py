@@ -100,6 +100,6 @@ MV_TXT = """
 
 • <a href='https://t.me/+5olNhPeyW31jYjBl'>ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a>
 
-• <a href='https://t.me/+IMqrt1smwgo2OGM1'>ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ɴᴇᴡ ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ</a>
+• <a href='https://t.me/+1Zr7U1TCCMw2YmJl'>ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ɴᴇᴡ ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ</a>
 
 • <a href='https://t.me/+asOwq8hpxSgwOTY9'>ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ</a></b>"""
