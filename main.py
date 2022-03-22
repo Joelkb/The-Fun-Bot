@@ -56,7 +56,14 @@ async def start_message(bot, message):
                       ]]
             
             ),
-            parse_mode='html',
+            parse_mode='html'
+
+)
+
+
+
+@tgbot.on_message(filters.regex("movie") | filters.regex("Movie"))
+async def filter_handler(bot, message):
     Joel = datetime.datetime.now()
 
     time = Joel.hour
@@ -72,12 +79,7 @@ async def start_message(bot, message):
 
     else:
         get="Good Night 🌆"
-)
 
-
-
-@tgbot.on_message(filters.regex("movie") | filters.regex("Movie"))
-async def filter_handler(bot, message):
     await message.reply_photo(
             photo=(MOVIE_PIC),
             caption=(MOVIE_ENG_TXT.format(message.from_user.mention)),
