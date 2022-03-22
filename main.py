@@ -37,6 +37,22 @@ async def log_user(bot, message):
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
+    Joel = datetime.datetime.now()
+
+    time = Joel.hour
+
+    if time < 12:
+        get="Good Morning 🌅"
+
+    elif time < 15:
+        get="Good Afternoon ☀️"
+
+    elif time < 18:
+        get="Good Evening 🌇"
+
+    else:
+        get="Good Night 🌆"
+
     await message.reply_photo(
             photo=random.choice(START_IMG),
             caption=(START_TXT.format(message.from_user.mention, get)),
@@ -64,22 +80,6 @@ async def start_message(bot, message):
 
 @tgbot.on_message(filters.regex("movie") | filters.regex("Movie"))
 async def filter_handler(bot, message):
-    Joel = datetime.datetime.now()
-
-    time = Joel.hour
-
-    if time < 12:
-        get="Good Morning 🌅"
-
-    elif time < 15:
-        get="Good Afternoon ☀️"
-
-    elif time < 18:
-        get="Good Evening 🌇"
-
-    else:
-        get="Good Night 🌆"
-
     await message.reply_photo(
             photo=(MOVIE_PIC),
             caption=(MOVIE_ENG_TXT.format(message.from_user.mention)),
