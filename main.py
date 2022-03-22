@@ -109,6 +109,22 @@ async def admin_handler(bot, message):
 
 @tgbot.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
+    Joel = datetime.datetime.now()
+
+    time = Joel.hour
+
+    if time < 12:
+        get="Good Morning 🌅"
+
+    elif time < 15:
+        get="Good Afternoon ☀️"
+
+    elif time < 18:
+        get="Good Evening 🌇"
+
+    else:
+        get="Good Night 🌆"
+
         if query.data == "close_data":
             await query.message.delete()
 
