@@ -6,6 +6,7 @@ import random
 import logging
 import logging.config
 import os
+import datetime
 logger = logging.getLogger(__name__)
 
 tgbot=Client(
@@ -38,7 +39,7 @@ async def log_user(bot, message):
 async def start_message(bot, message):
     await message.reply_photo(
             photo=random.choice(START_IMG),
-            caption=(START_TXT.format(message.from_user.mention)),
+            caption=(START_TXT.format(get, message.from_user.mention)),
             reply_markup=InlineKeyboardMarkup(
                       [[
                         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
@@ -57,6 +58,22 @@ async def start_message(bot, message):
             ),
             parse_mode='html'
 )
+
+    Joel = datetime.datetime.now()
+
+    time = Joel.hour
+
+    if time < 12:
+        get="Good Morning 🌅"
+
+    elif time < 15:
+        get="Good Afternoon ☀️"
+
+    elif time < 18:
+        get="Good Evening 🌇"
+
+    else:
+        get="Good Night 🌆"
 
 @tgbot.on_message(filters.regex("movie") | filters.regex("Movie"))
 async def filter_handler(bot, message):
@@ -120,7 +137,7 @@ async def cb_checker(bot, query: CallbackQuery):
             )
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
-                text=(START_TXT.format(query.from_user.mention)),
+                text=(START_TXT.format(get, query.from_user.mention)),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
