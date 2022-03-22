@@ -39,7 +39,7 @@ async def log_user(bot, message):
 async def start_message(bot, message):
     await message.reply_photo(
             photo=random.choice(START_IMG),
-            caption=(START_TXT.format(message.from_user.mention)),
+            caption=(START_TXT.format(message.from_user.mention, get)),
             reply_markup=InlineKeyboardMarkup(
                       [[
                         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
