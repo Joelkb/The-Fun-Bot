@@ -10,11 +10,11 @@ import asyncio
 import html
 from typing import Optional, List
 
-from pyrogram import Message, Chat, Update, Bot, User, ParseMode
-from pyrogram import InlineKeyboardButton, InlineKeyboardMarkup
-from pyrogram.error import BadRequest, Unauthorized
-from pyrogram.ext import CommandHandler, RegexHandler, run_async, Filters
-from pyrogram.utils.helpers import mention_html
+from telegram import Message, Chat, Update, Bot, User, ParseMode
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.error import BadRequest, Unauthorized
+from telegram.ext import CommandHandler, RegexHandler, run_async, Filters
+from telegram.utils.helpers import mention_html
 
 from tg_bot import dispatcher, LOGGER
 from tg_bot.modules.helper_funcs.chat_status import user_not_admin, user_admin
