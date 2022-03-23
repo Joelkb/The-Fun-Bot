@@ -85,10 +85,10 @@ async def admin_handler(bot, message):
                         InlineKeyboardButton("✅ REPORT SENT ✅", callback_data="report")
                       ]]
             )
+)
     await asyncio.sleep(5)
     await admins.delete()
     await message.delete()
-)
 
 @tgbot.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
