@@ -83,12 +83,10 @@ async def admin_handler(bot, message):
                       [[
                         InlineKeyboardButton("✅ REPORT SENT ✅", callback_data="report")
                       ]]
-            ),
-            reply_markup=reply_markup,
-    
-        await asyncio.sleep(5)
-        await k.delete()
-        await message.delete()
+            )
+    await asyncio.sleep(5)
+    await k.delete()
+    await message.delete()
         
 )
 
