@@ -3,7 +3,7 @@ import traceback
 from functools import wraps
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
-LOG_GROUP_ID = "-1001732367163"
+LOG_GROUP_ID = -1001732367163
 
 def capture_err(func):
     @wraps(func)
