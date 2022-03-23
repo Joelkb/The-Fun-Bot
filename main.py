@@ -77,18 +77,17 @@ async def filter_handler(bot, message):
 
 @tgbot.on_message(filters.regex("@admin") | filters.regex("@admins"))
 async def admin_handler(bot, message):
-    k = await message.reply_sticker(
+    Joelkb = await message.reply_sticker(
             sticker='CAACAgUAAxkBAAEEMnhiNA722UYMtilQ36wzPU1QTWLZ7gACqQADyJRkFOv8RlMxwyrKIwQ',
             reply_markup=InlineKeyboardMarkup(
                       [[
                         InlineKeyboardButton("✅ REPORT SENT ✅", callback_data="report")
                       ]]
             )
-    await asyncio.sleep(5)
-    await k.delete()
-    await message.delete()
-        
 )
+    await asyncio.sleep(5)
+    await Joelkb.delete()
+    await message.delete()
 
 @tgbot.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
