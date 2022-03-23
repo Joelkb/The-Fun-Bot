@@ -94,7 +94,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from tg_bot.config import Development as Config
+    from plugins.config import Development as Config
     TOKEN = Config.API_KEY
     try:
         OWNER_ID = int(Config.OWNER_ID)
