@@ -6,7 +6,6 @@ import random
 import logging
 import logging.config
 import os
-import datetime
 logger = logging.getLogger(__name__)
 
 tgbot=Client(
@@ -37,25 +36,9 @@ async def log_user(bot, message):
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
-    Joel = datetime.datetime.now()
-
-    time = Joel.hour
-
-    if time < 12:
-        get="Good Morning 🌅"
-
-    elif time < 15:
-        get="Good Afternoon ☀️"
-
-    elif time < 18:
-        get="Good Evening 🌇"
-
-    else:
-        get="Good Night 🌆"
-
     await message.reply_photo(
             photo=random.choice(START_IMG),
-            caption=(START_TXT.format(message.from_user.mention, get)),
+            caption=(START_TXT.format(message.from_user.mention)),
             reply_markup=InlineKeyboardMarkup(
                       [[
                         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
@@ -100,31 +83,17 @@ async def admin_handler(bot, message):
                       [[
                         InlineKeyboardButton("✅ REPORT SENT ✅", callback_data="report")
                       ]]
-            )
-        
-),
+            ),
+            reply_markup=reply_markup,
+    
     await asyncio.sleep(5)
     await k.delete()
     await message.delete()
+        
+)
 
 @tgbot.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
-    Joel = datetime.datetime.now()
-
-    time = Joel.hour
-
-    if time < 12:
-        get="Good Morning 🌅"
-
-    elif time < 15:
-        get="Good Afternoon ☀️"
-
-    elif time < 18:
-        get="Good Evening 🌇"
-
-    else:
-        get="Good Night 🌆"
-
         if query.data == "close_data":
             await query.message.delete()
 
@@ -142,21 +111,10 @@ async def cb_checker(bot, query: CallbackQuery):
                      ],[
                         InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                       ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
+            
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
-                text=(START_TXT.format(query.from_user.mention, get)),
+                text=(START_TXT.format(query.from_user.mention)),
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
@@ -169,18 +127,7 @@ async def cb_checker(bot, query: CallbackQuery):
                           InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_data'),
                           InlineKeyboardButton('❤️ sᴏᴜʀᴄᴇ', callback_data='sourcehelp')
                       ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
+            
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(HELP_TXT.format(query.from_user.mention)),
@@ -196,18 +143,7 @@ async def cb_checker(bot, query: CallbackQuery):
                           InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_data'),
                           InlineKeyboardButton('❤️ sᴏᴜʀᴄᴇ', callback_data='source')
                       ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
+            
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(ABOUT_TXT.format(query.from_user.mention)),
@@ -220,18 +156,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         InlineKeyboardButton('🔙 ʙᴀᴄᴋ', callback_data='about'),
                         InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_data')
                       ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
+            
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(SOURCE_TXT),
@@ -244,18 +169,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         InlineKeyboardButton('🔙 ʙᴀᴄᴋ', callback_data='help'),
                         InlineKeyboardButton('🔐 ᴄʟᴏsᴇ', callback_data='close_data')
                       ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
+            
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(SOURCE_TXT),
@@ -276,18 +190,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton('💥 ഞങ്ങളുടെ പ്രധാന ചാനലിൽ ചേരുക 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                   ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
+            
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(MAL_TRAN.format(query.from_user.mention)),
@@ -309,18 +212,7 @@ async def cb_checker(bot, query: CallbackQuery):
                      ],[
                         InlineKeyboardButton('💥 हमारे मुख्य चैनल से जुड़ें 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                       ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
+            
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(HIN_TRAN.format(query.from_user.mention)),
@@ -334,18 +226,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         InlineKeyboardButton('മലയാളം', callback_data='mal_tran'),
                         InlineKeyboardButton('हिन्दी', callback_data='hin_tran')
                       ]]
-            await query.message.edit_text(
-                text="⭗ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⭗ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⭗"
-            )
-            await query.message.edit_text(
-                text="⦿ ⦿ ⦿"
-            )
+            
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=(LANG),
