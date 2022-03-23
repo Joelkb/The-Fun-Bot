@@ -7,6 +7,7 @@ import logging
 import logging.config
 import os
 import asyncio
+from wbb.core.decorators.errors import capture_err
 logger = logging.getLogger(__name__)
 
 tgbot=Client(
