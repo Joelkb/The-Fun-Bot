@@ -54,6 +54,7 @@ async def start_message(bot, message):
            ],[
               InlineKeyboardButton("Try Again 🔄", url="t.me/the_fun_mallu_bot?start")
             ]]
+            )
 
             return
 
