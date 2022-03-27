@@ -457,9 +457,12 @@ async def admin_handler(bot, message):
 @tgbot.on_message(filters.regex("t.me") | filters.regex("http") | filters.regex(".in") | filters.regex(".com"))
 async def link_handler(bot, message):
     if message.from_user.id not in ADMINS:
+        spam = await message.reply_text(f"<b>Spamming found ❗\n\nHey {message.from_user.mention},\n\nDo not send any link to this group ❌\n\nI warn you ⚠️</b>")
         await message.delete()
+        await asyncio.sleep(20)
+        await spam.delete()
     else:
-        approve = await message.reply_text("You've been approved as Admin ✅")
+        approve = await message.reply_text(f"<b>Hey {message.from_user.mention},\n\nYou've been approved as Admin ✅</b>")
         await asyncio.sleep(10)
         await approve.delete()
         await message.delete()
