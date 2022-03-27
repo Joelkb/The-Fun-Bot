@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel
-from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT
+from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import UserNotParticipant
 import random
@@ -43,7 +43,7 @@ async def start_message(bot, message):
         try:
             user = await bot.get_chat_member(FSub_Channel, message.from_user.id)
             if user.status == "kicked out":
-                await message.reply_text(f"Sorry {message.from_user.mention}, You are banned to use me 😔")
+                await message.reply_text(KICKED.format(message.from_user.mention))
                 return
         except UserNotParticipant:
             await message.reply_text(
