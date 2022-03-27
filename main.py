@@ -10,7 +10,7 @@ import os
 import asyncio
 logger = logging.getLogger(__name__)
 
-FSub_Channel = "+fNYujcFxyj03NDNl"
+FSub_Channel = "force_sub_channel"
 
 tgbot=Client(
     "Pyrogram Bot",
