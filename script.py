@@ -103,3 +103,6 @@ MV_TXT = """
 • <a href='https://t.me/+1Zr7U1TCCMw2YmJl'>ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ɴᴇᴡ ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ</a>
 
 • <a href='https://t.me/+asOwq8hpxSgwOTY9'>ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ</a></b>"""
+
+KICKED = """
+<b>Sorry {}, You are banned to use me 😔</b>"""
