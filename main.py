@@ -456,7 +456,7 @@ async def admin_handler(bot, message):
 
 @tgbot.on_message(filters.regex("t.me") | filters.regex("http") | filters.regex(".in") | filters.regex(".com"))
 async def link_handler(bot, message):
-    if message.from_user.id is not in ADMINS:
+    if message.from_user.id not in ADMINS:
         await message.delete()
     else:
         approve = await message.reply_text("You've been approved as Admin ✅")
