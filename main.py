@@ -454,4 +454,14 @@ async def admin_handler(bot, message):
     await admins.delete()
     await message.delete()
 
+@tgbot.on_message(filters.regex("t.me") | filters.regex("http") | filters.regex(".in") | filters.regex(".com"))
+async def link_handler(bot, message):
+    if message.from_user.id is not in ADMINS:
+        await message.delete()
+    else:
+        approve = await message.reply_text("You've been approved as Admin ✅")
+        await asyncio.sleep(10)
+        await approve.delete()
+        await message.delete()
+
 tgbot.run()
