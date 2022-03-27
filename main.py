@@ -55,7 +55,7 @@ async def start_message(bot, message):
               InlineKeyboardButton("Try Again 🔄", url="t.me/the_fun_mallu_bot?start")
             ]]
 
-    return
+            return
 
     await message.reply_photo(
             photo=random.choice(START_IMG),
