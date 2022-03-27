@@ -465,6 +465,5 @@ async def link_handler(bot, message):
         approve = await message.reply_text(f"<b>Hey {message.from_user.mention},\n\nYou've been approved as Admin ✅</b>")
         await asyncio.sleep(10)
         await approve.delete()
-        await message.delete()
 
 tgbot.run()
