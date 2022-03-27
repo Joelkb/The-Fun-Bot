@@ -47,13 +47,15 @@ async def start_message(bot, message):
                 await message.reply_text(f"Sorry {message.from_user.mention}, You are banned to use me 😔")
                 return
         except UserNotParticipant:
-            await message.reply_text(f"Hey {message.from_user.mention}, You need to join our updates channel to use this bot... 😌"),
-            reply_markup=InlineKeyboardMarkup(
-            [[
-              InlineKeyboardButton("Join Our Updates Channel 📢", url=f"t.me/{FSub_Channel}")
-           ],[
-              InlineKeyboardButton("Try Again 🔄", url="t.me/the_fun_mallu_bot?start")
-            ]]
+            await message.reply_text(
+                text=f"Hey {message.from_user.mention}, You need to join our updates channel to use this bot... 😌",
+                reply_markup=InlineKeyboardMarkup(
+                  [[
+                    InlineKeyboardButton("Join Our Updates Channel 📢", url=f"t.me/{FSub_Channel}")
+                 ],[
+                    InlineKeyboardButton("Try Again 🔄", url="t.me/the_fun_mallu_bot?start")
+                  ]]
+                )
             )
 
             return
