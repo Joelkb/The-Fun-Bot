@@ -2,12 +2,15 @@ from pyrogram import Client, filters
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.errors import UserNotParticipant
 import random
 import logging
 import logging.config
 import os
 import asyncio
 logger = logging.getLogger(__name__)
+
+FSub_Channel = "+fNYujcFxyj03NDNl"
 
 tgbot=Client(
     "Pyrogram Bot",
@@ -37,6 +40,23 @@ async def log_user(bot, message):
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
+    if FSub_Channel:
+        try:
+            user = await bot.get_chat_member(FSub_Channel, message.from_user.id)
+            if user.status == "kicked out":
+                await message.reply_text(f"Sorry {message.from_user.mention}, You are banned to use me 😔")
+                return
+        except UserNotParticipant:
+            await message.reply_text(f"Hey {message.from_user.mention}, You need to join our updates channel to use this bot... 😌"),
+            reply_markup=InlineKeyboardMarkup(
+            [[
+              InlineKeyboardButton("Join Our Updates Channel 📢", url=f"t.me/{FSub_Channel}")
+           ],[
+              InlineKeyboardButton("Try Again 🔄", url="t.me/the_fun_mallu_bot?start")
+            ]]
+
+    return
+
     await message.reply_photo(
             photo=random.choice(START_IMG),
             caption=(START_TXT.format(message.from_user.mention)),
