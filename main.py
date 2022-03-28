@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel
-from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
+from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB, COMMAND_USER
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import UserNotParticipant
 import random
@@ -33,9 +33,7 @@ async def log_file(bot, message):
 
 @tgbot.on_message(filters.command('logs'))
 async def log_user(bot, message):
-    await message.reply_text(
-        text="This is an Admin command, Not for you!"
-)
+    await message.reply_text(COMMAND_USER.format(message.from_user.mention))
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
