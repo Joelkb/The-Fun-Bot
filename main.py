@@ -230,7 +230,7 @@ async def cb_checker(bot, query: CallbackQuery):
             )
             
         elif query.data == "report":
-            await query.answer(REPORT_TXT.format(message.from_user.mention), show_alert=True)
+            await query.answer(REPORT_TXT.format(query.from_user.mention), show_alert=True)
             
 
 @tgbot.on_message(filters.command("howilook"))
