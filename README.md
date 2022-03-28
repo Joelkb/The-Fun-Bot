@@ -39,7 +39,7 @@
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://telegram.dog/XTZ_HerokuBot?start=RXZhbWFyaWFURy9FdmFNYXJpYSBtYXN0ZXI">
+<a href="https://telegram.dog/XTZ_HerokuBot?start=Sm9lbGtiL1RoZS1GdW4tQm90IG1haW4">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
