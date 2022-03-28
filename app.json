@@ -1,0 +1,69 @@
+{
+    "name": "The-Fun-Bot",
+    "description": "A Bot with some fun features and few group management features...",
+    "stack": "container",
+    "keywords": [
+      "telegram",
+      "fun bot",
+      "games",
+      "best",
+      "indian",
+      "pyrogram",
+      "media",
+      "group manager",
+      "channel",
+      "movie",
+      "force subscription"
+    ],
+    "website": "https://github.com/Joelkb/The-Fun-Bot",
+    "repository": "https://github.com/Joelkb/The-Fun-Bot",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your bot token.",
+            "required": true
+        },
+        "API_ID": {
+            "description": "Get this value from https://my.telegram.org",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Get this value from https://my.telegram.org",
+            "required": true
+        },
+        "SESSION": {
+            "description": "You can use any session name as you wish...",
+            "required": true
+        },
+        "ADMINS": {
+            "description": "Username or ID of Admins. Separate multiple Admins by space.",
+            "required": true
+        },
+        "FSub_Channel": {
+            "description": "Type your force subscription channel's username without @",
+            "required": true
+        },
+        "MOVIE_PIC": {
+            "description": "Give a telegraph image link which is used for Anti Movie Mode...",
+            "required": false
+        },
+        "LOOK_IMG": {
+            "description": "Give a telegraph image link which is used for How I Look Command. Separate multiple links by space.\nLeave it empty if you don't want to add images as your wish.",
+            "required": false
+        },
+        "START_IMG": {
+            "description": "Give a telegraph Image link which is used as Start Pic. Multiple Links can be separated by space.",
+            "required": false
+        }
+        
+    },
+    "addons": [],
+    "buildpacks": [{
+        "url": "heroku/python"
+    }],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
