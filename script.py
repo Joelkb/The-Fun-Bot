@@ -93,3 +93,6 @@ KICKED = """
 
 FSUB = """
 <b>Hey {}, You need to join our updates channel to use this bot... 😌</b>"""
+
+COMMAND_USER = """
+<b>Hey {}, This is an Admin command, Not for you!</b>"""
