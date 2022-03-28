@@ -19,6 +19,32 @@
 - [x] Random Start Pics
 - [x] Anti Movie Mode(Helpful for movie groups)
 
+## Variables
+
+### Required Variables
+* `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Bot token.
+* `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
+* `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
+* `ADMINS`: Type the Telegram ID of those who needs access to the admin commands...
+* `SESSION`: Type any session name as you wish...
+* `FSub_Channel`: Type your force subscription channel's username without @
+
+### Optional Variables
+* `MOVIE_PIC`: Give a telegraph image link which is used for Anti Movie Mode
+* `LOOK_IMG`: Give a telegraph image link which is used for How I Look Command (Multiple Links needed to be separated by space for random pics)
+* `START_IMG`: Give a telegraph Image link which is used as Start Pic (Multiple Links needed to be separated by space for random pics)
+
+## Deploy
+
+<details><summary>Deploy To Heroku</summary>
+<p>
+<br>
+<a href="https://telegram.dog/XTZ_HerokuBot?start=RXZhbWFyaWFURy9FdmFNYXJpYSBtYXN0ZXI">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+</p>
+</details>
+
 <p align="center">
 😎 𝐌𝐘 𝐃𝐄𝐕'𝐒 𝐒𝐎𝐂𝐈𝐀𝐋 𝐏𝐑𝐎𝐅𝐈𝐋𝐄𝐒
 </p>
