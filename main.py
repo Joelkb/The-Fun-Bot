@@ -21,7 +21,7 @@ tgbot=Client(
 
 logging.config.fileConfig('logging.conf')
 logging.getLogger().setLevel(logging.INFO)
-logging.getLogger("Pyrogram Bot").setLevel(logging.ERROR)
+logging.getLogger("pyrogram").setLevel(logging.ERROR)
 
 
 @tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
