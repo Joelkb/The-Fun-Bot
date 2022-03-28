@@ -96,3 +96,6 @@ FSUB = """
 
 COMMAND_USER = """
 <b>Hey {}, This is an Admin command, Not for you!</b>"""
+
+REPORT_TXT = """
+Hey {}, Your report has been successfully send to the group Admins ✅"""
