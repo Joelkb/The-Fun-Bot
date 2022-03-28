@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel
-from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MAL_TRAN, HIN_TRAN, LANG, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
+from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import UserNotParticipant
 import random
@@ -66,8 +66,6 @@ async def start_message(bot, message):
                       [[
                         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
                      ],[
-                        InlineKeyboardButton('sᴡɪᴛᴄʜ ʟᴀɴɢᴜᴀɢᴇ', callback_data='lang')
-                     ],[
                         InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', callback_data="owner_info"),
                         InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', callback_data="movie_grp")
                      ],[
@@ -108,8 +106,6 @@ async def cb_checker(bot, query: CallbackQuery):
         elif query.data == "start":
             buttons = [[
                         InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
-                     ],[
-                        InlineKeyboardButton('sᴡɪᴛᴄʜ ʟᴀɴɢᴜᴀɢᴇ', callback_data='lang')
                      ],[
                         InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', callback_data="owner_info"),
                         InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', callback_data="movie_grp")
@@ -184,63 +180,6 @@ async def cb_checker(bot, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
-        elif query.data == "mal_tran":
-            buttons = [[
-                    InlineKeyboardButton('➕ എന്നെ നിങ്ങളുടെ ഗ്രൂപ്പിൽ ചേർക്കുക ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
-                ],[
-                    InlineKeyboardButton('ഭാഷ മാറുക', callback_data='lang')
-                ],[
-                    InlineKeyboardButton('🤴ബോട്ട് ഉടമ🤴', callback_data="owner_info"),
-                    InlineKeyboardButton('🍿സിനിമാ ഗ്രൂപ്പ്🍿', callback_data="movie_grp")
-                ],[
-                    InlineKeyboardButton('ℹ️ സഹായം', callback_data='help'),
-                    InlineKeyboardButton('😊 വിവരം', callback_data='about')
-                ],[
-                    InlineKeyboardButton('💥 ഞങ്ങളുടെ പ്രധാന ചാനലിൽ ചേരുക 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
-                  ]]
-            
-            reply_markup = InlineKeyboardMarkup(buttons)
-            await query.message.edit_text(
-                text=(MAL_TRAN.format(query.from_user.mention)),
-                reply_markup=reply_markup,
-                parse_mode='html'
-            )
-       
-        elif query.data == "hin_tran":
-            buttons = [[
-                        InlineKeyboardButton('➕ मुझे अपने ग्रुप में जोड़ें ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
-                     ],[
-                        InlineKeyboardButton('भाषा बदलें', callback_data='lang')
-                     ],[
-                        InlineKeyboardButton('🤴बॉट मालिक🤴', callback_data="owner_info"),
-                        InlineKeyboardButton('🍿फिल्म ग्रुप🍿', callback_data="movie_grp")
-                     ],[
-                        InlineKeyboardButton('ℹ️ मदद', callback_data='help'),
-                        InlineKeyboardButton('😊 विवरण', callback_data='about')
-                     ],[
-                        InlineKeyboardButton('💥 हमारे मुख्य चैनल से जुड़ें 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
-                      ]]
-            
-            reply_markup = InlineKeyboardMarkup(buttons)
-            await query.message.edit_text(
-                text=(HIN_TRAN.format(query.from_user.mention)),
-                reply_markup=reply_markup,
-                parse_mode='html'
-            )
-            
-        elif query.data == "lang":
-            buttons = [[
-                        InlineKeyboardButton('English', callback_data='start'),
-                        InlineKeyboardButton('മലയാളം', callback_data='mal_tran'),
-                        InlineKeyboardButton('हिन्दी', callback_data='hin_tran')
-                      ]]
-            
-            reply_markup = InlineKeyboardMarkup(buttons)
-            await query.message.edit_text(
-                text=(LANG),
-                reply_markup=reply_markup,
-                parse_mode='html'
-            )
 
         elif query.data == "owner_info":
             btn = [[
@@ -292,7 +231,7 @@ async def cb_checker(bot, query: CallbackQuery):
             )
             
         elif query.data == "report":
-            await query.answer("Report has been successfully send ✅", show_alert=True)
+            await query.answer("Report has been successfully send to the group Admins ✅", show_alert=True)
             
 
 @tgbot.on_message(filters.command("howilook"))
