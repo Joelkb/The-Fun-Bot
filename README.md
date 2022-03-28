@@ -1,5 +1,16 @@
 ## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Lemon+milk&color=Y70000&lines=Welcome+to+The+Fun+Bot's+repo;A+Bot+with+Fun+and+enjoyment;More+Features+are+on+the+way...;Kindly+Fork+and+star+the+repo;And+start+editing+the+repo...;Still+Under+Development...)](https://git.io/typing-svg)
 
+## <b>ABOUT THE BOT</b>
+<b>A bot with some fun features and few group management features...</b>
+
+[![Stars](https://img.shields.io/github/stars/Joelkb/The-Fun-Bot?style=flat-square&color=yellow)](https://github.com/Joelkb/The-Fun-Bot/stargazers)
+[![Forks](https://img.shields.io/github/forks/Joelkb/The-Fun-Bot?style=flat-square&color=orange)](https://github.com/Joelkb/The-Fun-Bot/fork)
+[![Size](https://img.shields.io/github/repo-size/Joelkb/The-Fun-Bot?style=flat-square&color=green)](https://github.com/Joelkb/The-Fun-Bot/)   
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/Joelkb/The-Fun-Bot)   
+[![Contributors](https://img.shields.io/github/contributors/Joelkb/The-Fun-Bot?style=flat-square&color=green)](https://github.com/Joelkb/The-Fun-Bot/graphs/contributors)
+[![License](https://img.shields.io/badge/License-AGPL-blue)](https://github.com/Joelkb/The-Fun-Bot/blob/main/LICENSE)
+[![Sparkline](https://stars.medv.io/Joelkb/The-Fun-Bot.svg)](https://stars.medv.io/Joelkb/The-Fun-Bot)
+
 <p align="center">
 😎 𝐌𝐘 𝐃𝐄𝐕'𝐒 𝐒𝐎𝐂𝐈𝐀𝐋 𝐏𝐑𝐎𝐅𝐈𝐋𝐄𝐒
 </p>
