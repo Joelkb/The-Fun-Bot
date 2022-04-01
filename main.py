@@ -24,16 +24,7 @@ logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 
 
-@tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
-async def log_file(bot, message):
-    """Send log file"""
-    
-    if message.from_user.id not in ADMINS:
-        await message.reply_text(COMMAND_USER.format(message.from_user.mention))
-    else:
-        await message.reply_document('FunBot.log')
-except Exception as e:
-    await message.reply(str(e))
+
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
