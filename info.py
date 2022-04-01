@@ -31,3 +31,5 @@ MV_PIC = environ.get("MV_PIC", "https://telegra.ph/file/7c924bffb69a01d834ba4.jp
 FSub_Channel = environ.get("FSub_Channel", "")
 
 SESSION = environ.get("SESSION", "")
+
+VOICE = (environ.get("VOICE", "AwACAgQAAxkBAAEDCYNiRwABKYlAM9L7Yaw5nFiu39JIY_0AAqwKAAJfSWhRLT42YObppMUeBA  AwACAgQAAxkBAAEDCYBiRv-TfYb4FxzpVICNvrUeM_dizAAC8TAAAkfKQFFx7e0dVBrUDB4E AwACAgIAAxkBAAEDCYZiRwAB2Evyw-cCMeFiuWs4BAABupC7AAKXFAACx4EwSmqLVtbI03bJHgQ AwACAgIAAxkBAAEDCYliRwEQtI5sjXhUXKqItqfsFsWhhwAClBUAAnmd8EuoCHnDM1NhFh4E AwACAgUAAxkBAAEDCYxiRwFBtiTeTyW0g_j1cqgtLcQu6wACWAADT4tJVesq69rScL2OHgQ")).split()
