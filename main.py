@@ -5,11 +5,8 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram.errors import UserNotParticipant
 from plugins.fun_strings import FUN_STRINGS
 import random
-import logging
-import logging.config
 import os
 import asyncio
-logger = logging.getLogger(__name__)
 
 
 tgbot=Client(
@@ -18,13 +15,6 @@ tgbot=Client(
     api_id=API_ID,
     api_hash=API_HASH
 )
-
-logging.config.fileConfig('logging.conf')
-logging.getLogger().setLevel(logging.INFO)
-logging.getLogger("pyrogram").setLevel(logging.ERROR)
-
-
-
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
