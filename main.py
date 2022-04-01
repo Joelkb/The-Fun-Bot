@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
+from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION, VOICE
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB, COMMAND_USER, REPORT_TXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import UserNotParticipant
@@ -344,5 +344,12 @@ async def admin_handler(bot, message):
     await asyncio.sleep(20)
     await admins.delete()
     await message.delete()
+
+@tgbot.on_message(filters.command("dialogues"))
+async def dialogue_handler(bot, message):
+    await message.reply_voice(
+        voice=random.choice(VOICE),
+        caption="<b>Join @filmy_harbour</b>"
+)
 
 tgbot.run()
