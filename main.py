@@ -350,6 +350,6 @@ async def msg_deleter(bot, msg):
     if msg.from_user.id not in ADMINS:
         await msg.reply_text(f"<b>Hello {msg.from_user.mention}, This is an admin command, Not for you!</b>")
     else:
-        await message.reply_to_message.delete()
+        await reply_to_message.delete()
 
 tgbot.run()
