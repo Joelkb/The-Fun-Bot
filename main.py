@@ -27,11 +27,11 @@ logging.getLogger("pyrogram").setLevel(logging.ERROR)
 @tgbot.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
-    try:
-        if message.from_user.id not in ADMINS:
-            await message.reply_text(COMMAND_USER.format(message.from_user.mention))
-        else:
-            await message.reply_document('FunBot.log')
+    
+    if message.from_user.id not in ADMINS:
+        await message.reply_text(COMMAND_USER.format(message.from_user.mention))
+    else:
+        await message.reply_document('FunBot.log')
     except Exception as e:
         await message.reply(str(e))
 
