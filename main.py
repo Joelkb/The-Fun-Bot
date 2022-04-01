@@ -32,8 +32,8 @@ async def log_file(bot, message):
         await message.reply_text(COMMAND_USER.format(message.from_user.mention))
     else:
         await message.reply_document('FunBot.log')
-    except Exception as e:
-        await message.reply(str(e))
+except Exception as e:
+    await message.reply(str(e))
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
