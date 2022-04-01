@@ -345,4 +345,11 @@ async def admin_handler(bot, message):
     await admins.delete()
     await message.delete()
 
+@tgbot.on_message(filters.command("delete"))
+async def msg_deleter(bot, msg):
+    if msg.from_user.id not in ADMINS:
+        await msg.reply_text(f"Hello {msg.from_user.mention}, This is an admin command, Not for you!")
+    else:
+        await msg.message.reply_to_message.delete()
+
 tgbot.run()
