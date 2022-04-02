@@ -349,8 +349,7 @@ async def admin_handler(bot, message):
 def dialogue_handler(bot, message):
     tgbot.send_voice(
         voice=message.chat.id, random.choice(VOICE),
-        caption="<b>Join @filmy_harbour</b>"
-    )
+        caption="<b>Join @filmy_harbour</b>")
 
 
 
