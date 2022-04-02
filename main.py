@@ -346,8 +346,8 @@ async def admin_handler(bot, message):
     await message.delete()
 
 @tgbot.on_message(filters.command("dialogues"))
-async def dialogue_handler(bot, message):
-    await message.send_voice(
+def dialogue_handler(bot, message):
+    tgbot.reply_voice(
         voice=random.choice(VOICE),
         caption="<b>Join @filmy_harbour</b>"
 )
