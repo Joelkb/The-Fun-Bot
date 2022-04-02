@@ -4,8 +4,6 @@ from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_E
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.errors import UserNotParticipant
 from plugins.fun_strings import FUN_STRINGS
-from ..utils import sample_fn
-from ..screenshotbot import ScreenShotBot
 import random
 import os
 import asyncio
@@ -350,10 +348,5 @@ async def admin_handler(bot, message):
 @tgbot.on_message(filters.command("dialogues"))
 def dialogue_handler(bot, message):
     tgbot.send_voice(message.chat.id, random.choice(VOICE), caption="<b>Join @filmy_harbour</b>")
-
-
-@tgbot.on_callback_query(Filters.create(lambda _, query: query.data.startswith('smpl')))
-async def _(c, m):
-    asyncio.create_task(sample_fn(c, m))
 
 tgbot.run()
