@@ -325,6 +325,7 @@ async def luck_cownd(client, message):
 )
 async def runs(_, message):
     await message.reply_chat_action("Typing")
+    await asyncio.sleep(2)
     """ /fun strings """
     effective_string = random.choice(FUN_STRINGS)
     if message.reply_to_message:
