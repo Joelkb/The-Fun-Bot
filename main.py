@@ -94,6 +94,14 @@ async def cb_checker(bot, query: CallbackQuery):
                      ],[
                         InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
                       ]]
+
+            await query.edit_text("▰▱▱▱")
+            await asyncio.sleep(1)
+            await query.edit_text("▰▰▱▱")
+            await asyncio.sleep(1)
+            await query.edit_text("▰▰▰▱")
+            await asyncio.sleep(1)
+            await query.edit_text("▰▰▰▰")
             
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
