@@ -63,7 +63,8 @@ async def start_message(bot, message):
 
 @tgbot.on_message(filters.regex("movie") | filters.regex("Movie"))
 async def filter_handler(bot, message):
-    await message.reply_photo(
+    if message.from_user.id not in ADMINS:
+        await message.reply_photo(
             photo=(MOVIE_PIC),
             caption=(MOVIE_ENG_TXT.format(message.from_user.mention)),
             reply_markup=InlineKeyboardMarkup(
