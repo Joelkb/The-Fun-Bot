@@ -3,4 +3,3 @@ pyrogram
 tgcrypto
 python-telegram-bot==11.1.0
 loguru
-okteto init
