@@ -75,6 +75,10 @@ async def filter_handler(bot, message):
             ),
             parse_mode="html"
 )
+    else:
+        pro = await message.reply_text(f"<b>Hey {message.from_user.mention}, You are approved as Admin ✅</b>")
+        await asyncio.sleep(5)
+        await pro.delete()
 
 
 
