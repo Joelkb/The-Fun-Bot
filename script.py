@@ -9,21 +9,17 @@ HELP_TXT = """<b>👋 Hᴇʏ {},
 Hᴇʀᴇ ᴀʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs...
 
 /howilook - Sʜᴏᴡ ʏᴏᴜʀ ᴘɪᴄs 😂
-
 /dice ᴏʀ /roll - Rᴏʟʟs ᴀ ᴅɪᴄᴇ 🎲
-
 /goal ᴏʀ /shoot - Kɪᴄᴋs ᴀ ғᴏᴏᴛʙᴀʟʟ ⚽
-
 /throw ᴏʀ /dart - Tʜʀᴏᴡs ᴀɴ ᴀʀʀᴏᴡ 🎯
-
 /pinball ᴏʀ /tenpin - Tᴏ Pʟᴀʏ Pɪɴʙᴀʟʟ 🎳
-
 /luck ᴏʀ /crownd - Tᴇsᴛs ʏᴏᴜʀ ʟᴜᴄᴋ 🎰
-
+/video ᴏʀ /mp4 - Dᴏᴡɴʟᴏᴀᴅs ᴀ ᴠɪᴅᴇᴏ ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ 📽️
+/share - Cʀᴇᴀᴛᴇs ᴀ sʜᴀʀᴇᴀʙʟᴇ ᴛᴇxᴛ ʟɪɴᴋ 🔗
+/report - Oɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘs ᴛᴏ ɴᴏᴛɪғʏ ᴀ ᴍᴇᴍʙᴇʀ's ᴍᴇssᴀɢᴇ ᴛᴏ ᴛʜᴇ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴ 📃
 /fun - Fᴏʀ ᴍᴏʀᴇ ғᴜɴ 💥
 
 Mᴏʀᴇ ғᴇᴀᴛᴜʀᴇs ᴀʀᴇ ᴏɴ ᴛʜᴇ ᴡᴀʏ ✨
-
 Bᴏᴛ ᴍᴀᴅᴇ ʙʏ <a href='https://t.me/creatorbeatz'><i>Jᴏᴇʟ ᴋᴜʀɪᴀɴ ʙɪɪᴜ</i></a></b>"""
 
 LOOK_TXT = """<b>Tʜɪs ɪs ʜᴏᴡ {} Lᴏᴏᴋs ʟɪᴋᴇ 😂☝️
@@ -96,6 +92,3 @@ FSUB = """
 
 COMMAND_USER = """
 <b>Hey {}, This is an Admin command, Not for you!</b>"""
-
-REPORT_TXT = """
-Hey {}, Your report has been successfully send to the group Admins ✅"""
