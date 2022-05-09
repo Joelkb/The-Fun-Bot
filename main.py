@@ -9,7 +9,7 @@ from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 from __future__ import unicode_literals
-from .fonts import Fonts
+from plugins.fonts import Fonts
 import youtube_dl
 import math
 import time
