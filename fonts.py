@@ -1,3 +1,4 @@
+
 class Fonts:
     def typewriter(text):
         style = {
