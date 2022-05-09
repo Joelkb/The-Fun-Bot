@@ -1,9 +1,9 @@
 import os
 from fonts import Fonts
-from pyrogram import Client, filters
+from pyrogram import Client as tgbot, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-@Client.on_message(filters.private & filters.command(["font"]))
+@tgbot.on_message(filters.private & filters.command(["font"]))
 async def style_buttons(c, m, cb=False):
     buttons = [[
         InlineKeyboardButton('𝚃𝚢𝚙𝚎𝚠𝚛𝚒𝚝𝚎𝚛', callback_data='style+typewriter'),
@@ -57,7 +57,7 @@ async def style_buttons(c, m, cb=False):
         await m.message.edit_reply_markup(InlineKeyboardMarkup(buttons))
 
 
-@Client.on_callback_query(filters.regex('^nxt'))
+@tgbot.on_callback_query(filters.regex('^nxt'))
 async def nxt(c, m):
     if m.data == "nxt":
         buttons = [[
@@ -93,7 +93,7 @@ async def nxt(c, m):
         await style_buttons(c, m, cb=True)
 
 
-@Client.on_callback_query(filters.regex('^style'))
+@tgbot.on_callback_query(filters.regex('^style'))
 async def style(c, m):
     await m.answer()
     cmd, style = m.data.split('+')
@@ -181,3 +181,5 @@ async def style(c, m):
         await m.message.edit_text(new_text, reply_markup=m.message.reply_markup)
     except:
         pass
+    
+    tgbot.run()
