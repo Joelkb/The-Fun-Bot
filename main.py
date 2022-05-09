@@ -340,6 +340,6 @@ async def runs(_, message):
 
 @tgbot.on_message(filters.command("dialogues"))
 async def dialogue_handler(bot, message):
-    await message.send_voice(message.chat.id, random.choice(VOICE), caption="<b>Join @filmy_harbour</b>")
+    await message.reply_voice(message.chat.id, random.choice(VOICE), caption="<b>Join @filmy_harbour</b>")
 
 tgbot.run()
