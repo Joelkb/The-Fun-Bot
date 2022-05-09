@@ -9,7 +9,7 @@ from urllib.parse import quote
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
-from .fonts import Fonts
+from fonts import Fonts
 import youtube_dl
 import math
 import time
