@@ -49,7 +49,4 @@ Wikipedia
 geopy>=2.1.0
 py-tgcalls
 ffmpeg
-Pyromod
-sqlalchemy
-psycopg2-binary
-feedparser
+
