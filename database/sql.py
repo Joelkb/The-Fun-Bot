@@ -3,7 +3,7 @@ import threading
 from sqlalchemy import create_engine
 from sqlalchemy import Column, TEXT, Numeric
 from sqlalchemy.ext.declarative import declarative_base
-from config import DB_URI
+from info import DB_URI
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 def start() -> scoped_session:
