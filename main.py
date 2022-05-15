@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from pyrogram import Client, filters
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB, COMMAND_USER
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified
 from plugins.fun_strings import FUN_STRINGS
 from urllib.parse import quote
@@ -535,5 +535,21 @@ async def vsong(client, message: Message):
     for files in (sedlyf, file_stark):
         if files and os.path.exists(files):
             os.remove(files)
+
+@tgbot.on_inline_query()
+async def inline(bot, query: InlineQuery):
+    await query.answer(
+        results = [
+            InlineQueryResultArticle(
+                title = "Movies",
+                description = "For new and old movies and series in all languages, CLICK ME !",
+                thumb_url = "https://telegra.ph/file/7c924bffb69a01d834ba4.jpg",
+                inputmessagecontent = InputTextMessageContent(
+                    message_text = (MV_TXT)
+                )
+            )
+        ],
+        cache_time = 0
+    )
 
 tgbot.run()
