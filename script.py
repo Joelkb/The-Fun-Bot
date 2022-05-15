@@ -92,3 +92,6 @@ FSUB = """
 
 COMMAND_USER = """
 <b>Hey {}, This is an Admin command, Not for you!</b>"""
+
+WAIT_MSG = """
+<b>Processing ...</b>"""
