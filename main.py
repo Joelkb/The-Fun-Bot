@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from pyrogram import Client, filters
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
-from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB, COMMAND_USER
+from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB, COMMAND_USER, WAIT_MSG
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified
 from plugins.fun_strings import FUN_STRINGS
@@ -9,6 +9,7 @@ from urllib.parse import quote
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
+from database.sql import add_user, query_msg, full_userbase
 import youtube_dl
 import math
 import time
@@ -559,5 +560,11 @@ async def inline(bot, query: InlineQuery):
         ],
         cache_time = 0
     )
+
+@tgbot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
+async def get_users(client: Bot, message: Message):
+    msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
+    users = await full_userbase()
+    await msg.edit(f"{len(users)} users are using this bot")
 
 tgbot.run()
