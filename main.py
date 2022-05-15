@@ -546,6 +546,14 @@ async def inline(bot, query: InlineQuery):
                 thumb_url = "https://telegra.ph/file/7c924bffb69a01d834ba4.jpg",
                 input_message_content = InputTextMessageContent(
                     message_text = (MV_TXT)
+                ),
+                reply_markup = InlineKeyboardMarkup(
+                [[
+                  InlineKeyboardButton("ᴊᴏɪɴ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ", url="https://t.me/+5olNhPeyW31jYjBl"),
+                  InlineKeyboardButton("ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+asOwq8hpxSgwOTY9")
+               ],[
+                  InlineKeyboardButton("ɴᴇᴡ ʀᴇʟᴇᴀsᴇs", url="https://t.me/+1Zr7U1TCCMw2YmJl")
+                ]]
                 )
             )
         ],
