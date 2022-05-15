@@ -9,3 +9,4 @@ services:
      BOT_TOKEN: 5227324370:AAEVsHHyO3wDoH2sOH-bD_XD3GWrmLZXKv0
      FSub_Channel: all_cinemas_movies_films_world
      SESSION: Pyrogram Bot
+     DB_URI: mongodb+srv://Joel2005:Joel2005@cluster0.otz89.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
