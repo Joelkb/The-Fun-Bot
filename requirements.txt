@@ -49,3 +49,4 @@ Wikipedia
 geopy>=2.1.0
 py-tgcalls
 ffmpeg
+sqlalchemy~=1.3.23
