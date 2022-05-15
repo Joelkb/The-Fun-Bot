@@ -544,7 +544,7 @@ async def inline(bot, query: InlineQuery):
                 title = "Movies",
                 description = "For new and old movies and series in all languages, CLICK ME !",
                 thumb_url = "https://telegra.ph/file/7c924bffb69a01d834ba4.jpg",
-                inputmessagecontent = InputTextMessageContent(
+                input_message_content = InputTextMessageContent(
                     message_text = (MV_TXT)
                 )
             )
