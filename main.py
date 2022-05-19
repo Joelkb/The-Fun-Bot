@@ -153,6 +153,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
+            await query.answer("Wᴇʟᴄᴏᴍᴇ Tᴏ Mʏ Aʙᴏᴜᴛ Mᴏᴅᴜʟᴇ")
 
         elif query.data == "source":
             buttons = [[
@@ -166,6 +167,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
+            await query.answer("Nᴏᴛᴇ:-\n- Tʜɪs Bᴏᴛ Is A Cʟᴏsᴇ Sᴏᴜʀᴄᴇ Pʀᴏɪᴇᴄᴛ.\n- Dᴇᴠᴇʟᴏᴘᴇʀ - Jᴏᴇʟ ᴋᴜʀɪᴀɴ ʙɪɪᴜ", show_alert=True)
 
         elif query.data == "sourcehelp":
             buttons = [[
