@@ -136,6 +136,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
+            await query.answer('Wᴇʟᴄᴏᴍᴇ Tᴏ Mʏ Hᴇʟᴘ Mᴏᴅᴜʟᴇ')
 
         elif query.data == "about":
             buttons = [[
