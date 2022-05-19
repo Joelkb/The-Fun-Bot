@@ -198,21 +198,28 @@ async def cb_checker(bot, query: CallbackQuery):
                     InlineKeyboardButton("🇺🇲 Translate to English 🇺🇲", callback_data="movie_eng_txt")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.edit_text(
-                text=(MOVIE_MAL_TXT.format(query.from_user.mention)),
-                reply_markup=reply_markup,
-                parse_mode='html'
-            )
+            if query.from_user.id == query.message.reply_to_message.from_user.id:
+                await query.message.edit_text(
+                    text=(MOVIE_MAL_TXT.format(query.from_user.mention)),
+                    reply_markup=reply_markup,
+                    parse_mode='html'
+                )
+            else:
+                await query.answer("This is not for you !", show_alert=True)
+
         elif query.data == "movie_eng_txt":
             btn = [[
                     InlineKeyboardButton("🇮🇳 Translate to Malayalam 🇮🇳", callback_data="movie_mal_txt")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.edit_text(
-                text=(MOVIE_ENG_TXT.format(query.from_user.mention)),
-                reply_markup=reply_markup,
-                parse_mode='html'
-            )
+            if query.from_user.id == query.message.reply_to_message.from_user.id:
+                await query.message.edit_text(
+                    text=(MOVIE_ENG_TXT.format(query.from_user.mention)),
+                    reply_markup=reply_markup,
+                    parse_mode='html'
+                )
+            else:
+                await query.answer("This is not for you !", show_alert=True)
 
         elif query.data == "movie_grp":
             btn = [[
