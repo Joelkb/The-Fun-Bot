@@ -199,11 +199,14 @@ async def cb_checker(bot, query: CallbackQuery):
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             if query.from_user.id == query.message.reply_to_message.from_user.id:
-                await query.message.edit_text(
-                    text=(MOVIE_MAL_TXT.format(query.from_user.mention)),
-                    reply_markup=reply_markup,
-                    parse_mode='html'
-                )
+                try:
+                    await query.message.edit_text(
+                        text=(MOVIE_MAL_TXT.format(query.from_user.mention)),
+                        reply_markup=reply_markup,
+                        parse_mode='html'
+                    )
+                except:
+                    await query.answer("Button Expired !", show_alert=True)
             else:
                 await query.answer("This is not for you !", show_alert=True)
 
@@ -213,11 +216,14 @@ async def cb_checker(bot, query: CallbackQuery):
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
             if query.from_user.id == query.message.reply_to_message.from_user.id:
-                await query.message.edit_text(
-                    text=(MOVIE_ENG_TXT.format(query.from_user.mention)),
-                    reply_markup=reply_markup,
-                    parse_mode='html'
-                )
+                try:
+                    await query.message.edit_text(
+                        text=(MOVIE_ENG_TXT.format(query.from_user.mention)),
+                        reply_markup=reply_markup,
+                        parse_mode='html'
+                    )
+                except:
+                    await query.answer("Button Expired !", show_alert=True)
             else:
                 await query.answer("This is not for you !", show_alert=True)
 
