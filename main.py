@@ -205,7 +205,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         reply_markup=reply_markup,
                         parse_mode='html'
                     )
-                except:
+                except NoneType:
                     await query.answer("Button Expired !", show_alert=True)
             else:
                 await query.answer("This is not for you !", show_alert=True)
@@ -222,7 +222,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         reply_markup=reply_markup,
                         parse_mode='html'
                     )
-                except:
+                except NoneType:
                     await query.answer("Button Expired !", show_alert=True)
             else:
                 await query.answer("This is not for you !", show_alert=True)
