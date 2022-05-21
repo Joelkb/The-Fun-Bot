@@ -581,7 +581,7 @@ async def inline(bot, query: InlineQuery):
 async def dialogue_handler(bot, message):
     await tgbot.send_audio(
     chat_id=message.chat.id,
-    audio=(random.(MSIC))
+    audio=random.choice(MSIC)
     )
 
 tgbot.run()
