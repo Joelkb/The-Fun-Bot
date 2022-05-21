@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
 from pyrogram import Client, filters
-from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION, MSIC
+from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB, COMMAND_USER, WAIT_MSG, REPLY_ERROR
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
-from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified, RPCError
+from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified
 from plugins.fun_strings import FUN_STRINGS
 from urllib.parse import quote
 from youtube_search import YoutubeSearch
@@ -575,13 +575,6 @@ async def inline(bot, query: InlineQuery):
             )
         ],
         cache_time = 0
-    )
-
-@tgbot.on_message(filters.command("dialogues"))
-async def dialogue_handler(bot, message):
-    await tgbot.send_voice(
-    chat_id=message.chat.id,
-    voice=random.choice(MSIC)
     )
 
 tgbot.run()
