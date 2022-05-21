@@ -205,7 +205,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         reply_markup=reply_markup,
                         parse_mode='html'
                     )
-                except NoneType:
+                except AttributeError:
                     await query.answer("Button Expired !", show_alert=True)
             else:
                 await query.answer("This is not for you !", show_alert=True)
@@ -222,7 +222,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         reply_markup=reply_markup,
                         parse_mode='html'
                     )
-                except NoneType:
+                except AttributeError:
                     await query.answer("Button Expired !", show_alert=True)
             else:
                 await query.answer("This is not for you !", show_alert=True)
@@ -357,7 +357,7 @@ async def runs(_, message):
     await message.reply_chat_action("Typing")
     await asyncio.sleep(2)
     """ /fun strings """
-    effective_string = random.choice(FUN_STRINGS.format(message.from_user.first_name))
+    effective_string = random.choice(FUN_STRINGS)
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_string)
     else:
