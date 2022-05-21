@@ -357,7 +357,7 @@ async def runs(_, message):
     await message.reply_chat_action("Typing")
     await asyncio.sleep(2)
     """ /fun strings """
-    effective_string = random.choice(FUN_STRINGS)
+    effective_string = random.choice(FUN_STRINGS.format(message.from_user.first_name))
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_string)
     else:
