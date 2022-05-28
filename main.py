@@ -579,11 +579,10 @@ async def inline(bot, query: InlineQuery):
 
 @tgbot.on_message(filters.command("trash") & filters.group)
 async def trash_handler(bot, message):
-    if message.reply_to_message:
-        try:
-            await message.reply_to_message.delete()
-            await message.delete()
-        except:
-            await message.reply_text(f"<b>Hey {message.from_user.first}, Use this command as a reply to any message...</b>")
+    try:
+        await message.reply_to_message.delete()
+        await message.delete()
+    except AttributeError:
+        await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
 
 tgbot.run()
