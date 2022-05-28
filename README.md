@@ -5,7 +5,8 @@
 
 ## Features
 
-- [x] Anti Link Mode
+- [x] YouTube Video Downloader
+- [x] Text share link creator
 - [x] Fun Dialogues
 - [x] Dice Game
 - [x] Admin Commands
