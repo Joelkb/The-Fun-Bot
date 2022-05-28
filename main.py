@@ -579,10 +579,13 @@ async def inline(bot, query: InlineQuery):
 
 @tgbot.on_message(filters.command("trash") & filters.group)
 async def trash_handler(bot, message):
-    try:
-        await message.reply_to_message.delete()
-        await message.delete()
-    except AttributeError:
-        await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
+    if message.from_user.id not in ADMINS:
+        await message.reply_text("<b>Hey bro, This is an Admin Command !</b>")
+    else:
+        try:
+            await message.reply_to_message.delete()
+            await message.delete()
+        except AttributeError:
+            await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
 
 tgbot.run()
