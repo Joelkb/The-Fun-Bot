@@ -75,7 +75,7 @@ async def start_message(bot, message):
 
 
 
-@tgbot.on_message(filters.regex("movie") | filters.regex("Movie"))
+@tgbot.on_message(filters.regex("movie") | filters.regex("Movie") & filters.group)
 async def filter_handler(bot, message):
     if message.from_user.id not in ADMINS:
         await message.reply_photo(
