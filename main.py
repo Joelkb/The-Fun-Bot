@@ -577,4 +577,10 @@ async def inline(bot, query: InlineQuery):
         cache_time = 0
     )
 
+USER_MSG = message.reply_to_message
+
+@tgbot.on_message(filters.command("trash"))
+async def trash_handler(bot, message):
+    await USER_MSG.delete()
+
 tgbot.run()
