@@ -588,13 +588,4 @@ async def trash_handler(bot, message):
         except AttributeError:
             await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
 
-a = int(input("Enter Total Amount: "))
-b = int(input("Enter Interest Rate: "))
-c = int(input("Enter Deposit Duration: "))
-d = a*b*c/100
-
-@tgbot.on_message(filters.command("rate"))
-async def rate(bot, message):
-    await message.reply_text(f"d")
-
 tgbot.run()
