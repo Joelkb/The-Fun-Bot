@@ -593,10 +593,10 @@ async def load_handler(bot, message):
     for i in range(5):
         await message.reply_text("<b>Started Loading</b>")
         asyncio.sleep(1)
-        await message.reply_text("<b>Started Loading.</b>")
+        await message.edit_text("<b>Started Loading.</b>")
         asyncio.sleep(1)
-        await message.reply_text("<b>Started Loading..</b>")
+        await message.edit_text("<b>Started Loading..</b>")
         asyncio.sleep(1)
-        await message.reply_text("<b>Started Loading...</b>")
+        await message.edit_text("<b>Started Loading...</b>")
 
 tgbot.run()
