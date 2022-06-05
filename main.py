@@ -51,6 +51,15 @@ async def start_message(bot, message):
             )
 
             return
+    n = await message.reply_text("<b>Processing</b>")
+    await asyncio.sleep(0.5)
+    await n.edit_text("<b>Processing.</b>")
+    await asyncio.sleep(0.5)
+    await n.edit_text("<b>Processing..</b>")
+    await asyncio.sleep(0.5)
+    await n.edit_text("<b>Processing...</b>")
+    await asyncio.sleep(1)
+    await n.delete()
 
     await message.reply_photo(
             photo=random.choice(START_IMG),
