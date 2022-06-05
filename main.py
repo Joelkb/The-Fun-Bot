@@ -588,19 +588,4 @@ async def trash_handler(bot, message):
         except AttributeError:
             await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
 
-@tgbot.on_message(filters.command("load"))
-async def load_handler(bot, message):
-    n = await message.reply_text("<b>Started Loading</b>")
-    await asyncio.sleep(1)
-    for i in range(5):
-        await n.edit_text("<b>Started Loading.</b>")
-        await asyncio.sleep(1)
-        await n.edit_text("<b>Started Loading..</b>")
-        await asyncio.sleep(1)
-        await n.edit_text("<b>Started Loading...</b>")
-        await asyncio.sleep(1)
-        await n.edit_text("<b>Started Loading</b>")
-    await asyncio.sleep(1)
-    await n.edit_text("<b>Started Loading...</b>")
-
 tgbot.run()
