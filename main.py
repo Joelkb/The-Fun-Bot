@@ -589,14 +589,14 @@ async def trash_handler(bot, message):
             await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
 
 @tgbot.on_message(filters.command("load"))
-async def load_handler(bot, query):
+async def load_handler(bot, message):
     for i in range(5):
-        await query.reply_text("<b>Started Loading</b>")
+        n = await message.reply_text("<b>Started Loading</b>")
         asyncio.sleep(1)
-        await query.message.edit_text("<b>Started Loading.</b>")
+        await n.edit_text("<b>Started Loading.</b>")
         asyncio.sleep(1)
-        await query.message.edit_text("<b>Started Loading..</b>")
+        await n.edit_text("<b>Started Loading..</b>")
         asyncio.sleep(1)
-        await query.message.edit_text("<b>Started Loading...</b>")
+        await n.edit_text("<b>Started Loading...</b>")
 
 tgbot.run()
