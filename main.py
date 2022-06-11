@@ -26,10 +26,10 @@ import asyncio
 SUPPORT_CHAT = "filmy_harbour_support"
 aiohttpsession = ClientSession()
 
-C = "**Made by @The_obanai_bot**"
+C = "**Join @filmy_harbour and @FH_MV**"
 F = InlineKeyboardMarkup(
 [[
-     InlineKeyboardButton("Add Link", url="https://t.me/telegram")
+     InlineKeyboardButton("© Fɪʟᴍʏ Hᴀʀʙᴏᴜʀ", url="https://t.me/FH_MV")
 ]]
 )
 
