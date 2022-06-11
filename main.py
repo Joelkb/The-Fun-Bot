@@ -9,6 +9,7 @@ from urllib.parse import quote
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
 from aiohttp import ClientSession
+from plugins.function import make_carbon
 from yt_dlp import YoutubeDL
 import youtube_dl
 import math
