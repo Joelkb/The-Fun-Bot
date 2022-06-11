@@ -8,6 +8,7 @@ from plugins.fun_strings import FUN_STRINGS
 from urllib.parse import quote
 from youtube_search import YoutubeSearch
 from youtubesearchpython import SearchVideos
+from aiohttp import ClientSession
 from yt_dlp import YoutubeDL
 import youtube_dl
 import math
@@ -22,6 +23,14 @@ import os
 import asyncio
 
 SUPPORT_CHAT = "filmy_harbour_support"
+aiohttpsession = ClientSession()
+
+C = "**Made by @The_obanai_bot**"
+F = InlineKeyboardMarkup(
+[[
+     InlineKeyboardButton("Add Link", url="https://t.me/telegram")
+]]
+)
 
 tgbot=Client(
     session_name=SESSION,
@@ -596,5 +605,26 @@ async def trash_handler(bot, message):
             await message.delete()
         except AttributeError:
             await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
+
+@tgbot.on_message(filters.command("carbon"))
+async def carbon_func(_, message):
+    if not message.reply_to_message:
+        return await message.reply_text(
+            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴄᴀʀʙᴏɴ."
+        )
+    if not message.reply_to_message.text:
+        return await message.reply_text(
+            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴀᴋᴇ ᴄᴀʀʙᴏɴ."
+        )
+    user_id = message.from_user.id
+    m = await message.reply_text("ᴘʀᴏᴄᴇssɪɴɢ...")
+    carbon = await make_carbon(message.reply_to_message.text)
+    await m.edit("ᴜᴘʟᴏᴀᴅɪɴɢ..")
+    await message.reply_photo(
+        photo=carbon,
+        caption=C,
+        reply_markup=F)
+    await m.delete()
+    carbon.close()
 
 tgbot.run()
