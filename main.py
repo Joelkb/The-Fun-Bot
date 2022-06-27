@@ -22,7 +22,7 @@ import requests
 import random
 import os
 import asyncio
-from plugins.fonts import Fonts
+from plugins import fonts
 
 SUPPORT_CHAT = "filmy_harbour_support"
 aiohttpsession = ClientSession()
