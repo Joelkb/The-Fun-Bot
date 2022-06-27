@@ -22,6 +22,7 @@ import requests
 import random
 import os
 import asyncio
+import users
 
 SUPPORT_CHAT = "filmy_harbour_support"
 aiohttpsession = ClientSession()
@@ -42,6 +43,12 @@ tgbot=Client(
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
+    usr = open("users.txt", "w")
+    if message.from_user.id not in users.txt:
+        usr.write("New User "+str(message.from_user.mention)+"with ID: "+str(message.from_user.id))
+        usr.close()
+    else:
+        usr.close()
     if FSub_Channel:
         try:
             user = await bot.get_chat_member(FSub_Channel, message.from_user.id)
