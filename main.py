@@ -42,7 +42,7 @@ tgbot=Client(
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
-    await message.send_message(LOG_CHANNEL, f"#NEW_USER\n\nName: {message.from_user.mention}\nID: {message.from_user.id})
+    await bot.send_message(LOG_CHANNEL, f"#NEW_USER\n\nName: {message.from_user.mention}\nID: {message.from_user.id})
     if FSub_Channel:
         try:
             user = await bot.get_chat_member(FSub_Channel, message.from_user.id)
