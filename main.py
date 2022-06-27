@@ -22,7 +22,6 @@ import requests
 import random
 import os
 import asyncio
-import users
 
 SUPPORT_CHAT = "filmy_harbour_support"
 aiohttpsession = ClientSession()
