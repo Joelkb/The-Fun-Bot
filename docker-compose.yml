@@ -9,3 +9,4 @@ services:
      BOT_TOKEN: $BOT_TOKEN
      FSub_Channel: $FSub_Channel
      SESSION: $SESSION
+     LOG_CHANNEL: $LOG_CHANNEL
