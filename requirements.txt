@@ -49,4 +49,5 @@ Wikipedia
 geopy>=2.1.0
 py-tgcalls
 ffmpeg
-
+mysql_config
+mysql-python
