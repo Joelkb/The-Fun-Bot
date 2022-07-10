@@ -4,6 +4,7 @@ from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_E
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified
 from plugins.fun_strings import FUN_STRINGS
+from urllib.parse import quote
 import random
 import os
 import asyncio
