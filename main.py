@@ -1,6 +1,6 @@
 from pyrogram import Client, filters, enums
-from info import START_IMG, LOOK_IMG, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
-from script import START_TXT, LOOK_TXT, HELP_TXT, COMMAND_HAND_LER, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
+from info import START_IMG, LOOK_IMG, MOVIE_PIC, COMMAND_HAND_LER, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
+from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified
 from plugins.fun_strings import FUN_STRINGS
