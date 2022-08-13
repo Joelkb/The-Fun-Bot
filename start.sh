@@ -4,3 +4,4 @@ cd /The-Fun-Bot
 pip3 install -U -r requirements.txt
 echo "Starting The-Fun-Bot..."
 python3 main.py
+echo "The-Fun-Bot Started !"
