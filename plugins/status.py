@@ -7,7 +7,6 @@ import heroku3
 import requests
 
 from pyrogram import Client, filters, enums
-from database.users_chats_db import db
 
 #=====================================================
 BOT_START_TIME = time.time()
