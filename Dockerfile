@@ -1,8 +1,8 @@
 FROM python:3.9.1
-WORKDIR /app
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-COPY . .
-CMD python3 main.py
+COPY requirements.txt /requirements.txt
+RUN cd /
+RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+RUN mkdir /The-Fun-Bot
+WORKDIR /The-Fun-Bot
 COPY start.sh /start.sh
 CMD ["/bin/bash", "/start.sh"]
