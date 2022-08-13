@@ -8,7 +8,6 @@ from urllib.parse import quote
 import random
 import os
 import asyncio
-from plugins import status
 
 tgbot=Client(
     name=SESSION,
