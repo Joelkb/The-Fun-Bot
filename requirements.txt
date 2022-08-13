@@ -2,4 +2,3 @@ pyrogram
 tgcrypto
 aiofiles
 aiohttp
-Heroku3
