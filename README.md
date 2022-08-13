@@ -5,6 +5,7 @@
 
 ## Features
 
+- [x] Trash Command
 - [x] Fun Dialogues
 - [x] How I Look Command
 - [x] Force Subscription
