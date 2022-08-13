@@ -17,8 +17,6 @@
 - [x] Pinball Game 
 - [x] Spinner Game
 - [x] Random Start Pics
-- [x] Heroku Dyno Check
-- [x] Bot working day prediction
 - [x] Anti Movie Mode(Helpful for movie groups)
 
 ## Variables
