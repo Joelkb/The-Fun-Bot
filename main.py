@@ -1,6 +1,6 @@
 from pyrogram import Client, filters, enums
-from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION, SUPPORT_CHAT
-from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB, COMMAND_USER, WAIT_MSG, REPLY_ERROR
+from info import START_IMG, LOOK_IMG, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
+from script import START_TXT, LOOK_TXT, HELP_TXT, COMMAND_HAND_LER, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified
 from plugins.fun_strings import FUN_STRINGS
@@ -248,105 +248,6 @@ async def howilook_message(bot, message):
             parse_mode=enums.ParseMode.HTML
 )
 
-# EMOJI CONSTANTS
-DICE_E_MOJI = "🎲"
-# EMOJI CONSTANTS
-
-
-@tgbot.on_message(
-    filters.command(["roll", "dice"], COMMAND_HAND_LER)
-)
-async def roll_dice(client, message):
-    """ @RollaDie """
-    rep_mesg_id = message.message_id
-    if message.reply_to_message:
-        rep_mesg_id = message.reply_to_message.message_id
-    await client.send_dice(
-        chat_id=message.chat.id,
-        emoji=DICE_E_MOJI,
-        disable_notification=True,
-        reply_to_message_id=rep_mesg_id
-    )
-
-# EMOJI CONSTANTS
-DART_E_MOJI = "🎯"
-# EMOJI CONSTANTS
-
-
-@tgbot.on_message(
-    filters.command(["throw", "dart"], COMMAND_HAND_LER)
-)
-async def throw_dart(client, message):
-    """ /throw an @AnimatedDart """
-    rep_mesg_id = message.message_id
-    if message.reply_to_message:
-        rep_mesg_id = message.reply_to_message.message_id
-    await client.send_dice(
-        chat_id=message.chat.id,
-        emoji=DART_E_MOJI,
-        disable_notification=True,
-        reply_to_message_id=rep_mesg_id
-    )
-
-# EMOJI CONSTANTS
-GOAL_E_MOJI = "⚽"
-# EMOJI CONSTANTS
-
-
-@tgbot.on_message(
-    filters.command(["goal", "shoot"], COMMAND_HAND_LER)
-)
-async def roll_dice(client, message):
-    """ @Goal """
-    rep_mesg_id = message.message_id
-    if message.reply_to_message:
-        rep_mesg_id = message.reply_to_message.message_id
-    await client.send_dice(
-        chat_id=message.chat.id,
-        emoji=GOAL_E_MOJI,
-        disable_notification=True,
-        reply_to_message_id=rep_mesg_id
-    )
-
-# EMOJI CONSTANTS
-PIN_BALL = "🎳"
-# EMOJI CONSTANTS
-
-@tgbot.on_message(
-    filters.command(["pinball", "tenpin"])
-)
-async def pinball_tenpin(client, message):
-    """ /pinball an @animatedpinball """
-    rep_mesg_id = message.message_id
-    if message.reply_to_message:
-        rep_mesg_id = message.reply_to_message.message_id
-    await client.send_dice(
-        chat_id=message.chat.id,
-        emoji=PIN_BALL,
-        disable_notification=True,
-        reply_to_message_id=rep_mesg_id
-    )
-
-# EMOJI CONSTANTS
-TRY_YOUR_LUCK = "🎰"
-# EMOJI CONSTANTS
-
-@tgbot.on_message(
-    filters.command(["luck", "cownd"])
-)
-async def luck_cownd(client, message):
-    """ /luck an @animatedluck """
-    rep_mesg_id = message.message_id
-    if message.reply_to_message:
-        rep_mesg_id = message.reply_to_message.message_id
-    await client.send_dice(
-        chat_id=message.chat.id,
-        emoji=TRY_YOUR_LUCK,
-        disable_notification=True,
-        reply_to_message_id=rep_mesg_id
-    )
-
-
 @tgbot.on_message(
     filters.command("fun", COMMAND_HAND_LER)
 )
@@ -359,62 +260,6 @@ async def runs(_, message):
         await message.reply_to_message.reply_text(effective_string)
     else:
         await message.reply_text(effective_string)
-
-def share_link(text: str) -> str:
-    return "**Here is Your Sharing Text 👇**\n\nhttps://t.me/share/url?url=" + quote(text)
-
-@tgbot.on_message(filters.command(["share", "sharetext", "st", "stxt", "shtxt", "shtext"]))
-async def share_text(client, message):
-    reply = message.reply_to_message
-    reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
-    input_split = message.text.split(None, 1)
-    if len(input_split) == 2:
-        input_text = input_split[1]
-    elif reply and (reply.text or reply.caption):
-        input_text = reply.text or reply.caption
-    else:
-        await message.reply_text(
-            text=f"**Notice:**\n\n1. Reply Any Messages.\n2. No Media Support\n\n**Any Question Join Support Chat**",
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            "Support Chat", url=f"https://t.me/{SUPPORT_CHAT}")
-                    ]                
-                ]
-            ),
-            reply_to_message_id=reply_id
-        )
-        return
-    await message.reply_text(share_link(input_text), reply_to_message_id=reply_id)
-
-@tgbot.on_message((filters.command(["report"]) | filters.regex("@admins") | filters.regex("@admin")) & filters.group)
-async def report_user(bot, message):
-    if message.reply_to_message:
-        chat_id = message.chat.id
-        reporter = str(message.from_user.id)
-        mention = message.from_user.mention
-        admins = await bot.get_chat_members(chat_id=chat_id, filter="administrators")
-        success = True
-        report = f"𝖱𝖾𝗉𝗈𝗋𝗍𝖾𝗋 : {mention} ({reporter})" + "\n"
-        report += f"𝖬𝖾𝗌𝗌𝖺𝗀𝖾 : {message.reply_to_message.link}"
-        for admin in admins:
-            try:
-                reported_post = await message.reply_to_message.forward(admin.user.id)
-                await reported_post.reply_text(
-                    text=report,
-                    chat_id=admin.user.id,
-                    disable_web_page_preview=True
-                )
-                success = True
-            except:
-                pass
-        if success:
-            await message.reply_text(f"Hey {message.from_user.mention}, Your Report Has Been Sent T𝗈 𝖠𝖽𝗆𝗂𝗇𝗌!")    
-            
-def time_to_seconds(time):
-    stringt = str(time)
-    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
 @tgbot.on_inline_query()
 async def inline(bot, query: InlineQuery):
