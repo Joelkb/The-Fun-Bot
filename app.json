@@ -53,10 +53,6 @@
         "START_IMG": {
             "description": "Give a telegraph Image link which is used as Start Pic. Multiple Links can be separated by space.",
             "required": false
-        },
-        "HEROKU_API_KEY": {
-            "description": "Your Heroku API Key",
-            "required": true
         }
         
     },
