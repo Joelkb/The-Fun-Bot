@@ -39,6 +39,15 @@
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
+<a href="https://heroku.com/deploy?template=https://github.com/Joelkb/The-Fun-Bot">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+</p>
+</details>
+
+<details><summary>Deploy To Heroku Via Bot</summary>
+<p>
+<br>
 <a href="https://telegram.dog/XTZ_HerokuBot?start=Sm9lbGtiL1RoZS1GdW4tQm90IG1haW4">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
