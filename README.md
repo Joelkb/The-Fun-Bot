@@ -5,17 +5,9 @@
 
 ## Features
 
-- [x] Text share link creator
 - [x] Fun Dialogues
-- [x] Dice Game
-- [x] Admin Commands
-- [x] Admin Report
 - [x] How I Look Command
 - [x] Force Subscription
-- [x] Football Game
-- [x] Dart Game
-- [x] Pinball Game 
-- [x] Spinner Game
 - [x] Random Start Pics
 - [x] Anti Movie Mode(Helpful for movie groups)
 
@@ -28,7 +20,6 @@
 * `ADMINS`: Type the Telegram ID of those who needs access to the admin commands...
 * `SESSION`: Type any session name as you wish...
 * `FSub_Channel`: Type your force subscription channel's username without @
-* `HEROKU_API_KEY`: Your Heroku API Key.
 
 ### Optional Variables
 * `MOVIE_PIC`: Give a telegraph image link which is used for Anti Movie Mode
