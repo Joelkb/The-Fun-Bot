@@ -1,4 +1,4 @@
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 from info import START_IMG, LOOK_IMG, COMMAND_HAND_LER, MOVIE_PIC, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION, SUPPORT_CHAT
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB, COMMAND_USER, WAIT_MSG, REPLY_ERROR
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
@@ -10,7 +10,7 @@ import os
 import asyncio
 
 tgbot=Client(
-    session_name=SESSION,
+    name=SESSION,
     bot_token=BOT_TOKEN,
     api_id=API_ID,
     api_hash=API_HASH
@@ -64,7 +64,7 @@ async def start_message(bot, message):
                       ]]
             
             ),
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
 
 )
 
@@ -82,7 +82,7 @@ async def filter_handler(bot, message):
                       ]]
             
             ),
-            parse_mode="html"
+            parse_mode=enums.ParseMode.HTML
 )
     else:
         pro = await message.reply_text(f"<b>Hey {message.from_user.mention}, You are approved as Admin ✅</b>")
@@ -113,7 +113,7 @@ async def cb_checker(bot, query: CallbackQuery):
             await query.message.edit_text(
                 text=(START_TXT.format(query.from_user.mention)),
                 reply_markup=reply_markup,
-                parse_mode='html'
+                parse_mode=enums.ParseMode.HTML
             )
 
         elif query.data == "help":
@@ -129,7 +129,7 @@ async def cb_checker(bot, query: CallbackQuery):
             await query.message.edit_text(
                 text=(HELP_TXT.format(query.from_user.mention)),
                 reply_markup=reply_markup,
-                parse_mode='html'
+                parse_mode=enums.ParseMode.HTML
             )
             await query.answer('Wᴇʟᴄᴏᴍᴇ Tᴏ Mʏ Hᴇʟᴘ Mᴏᴅᴜʟᴇ')
 
@@ -146,7 +146,7 @@ async def cb_checker(bot, query: CallbackQuery):
             await query.message.edit_text(
                 text=(ABOUT_TXT.format(query.from_user.mention)),
                 reply_markup=reply_markup,
-                parse_mode='html'
+                parse_mode=enums.ParseMode.HTML
             )
             await query.answer("Wᴇʟᴄᴏᴍᴇ Tᴏ Mʏ Aʙᴏᴜᴛ Mᴏᴅᴜʟᴇ")
 
@@ -160,7 +160,7 @@ async def cb_checker(bot, query: CallbackQuery):
             await query.message.edit_text(
                 text=(SOURCE_TXT),
                 reply_markup=reply_markup,
-                parse_mode='html'
+                parse_mode=enums.ParseMode.HTML
             )
 
         elif query.data == "sourcehelp":
@@ -173,7 +173,7 @@ async def cb_checker(bot, query: CallbackQuery):
             await query.message.edit_text(
                 text=(SOURCE_TXT),
                 reply_markup=reply_markup,
-                parse_mode='html'
+                parse_mode=enums.ParseMode.HTML
             )
 
         elif query.data == "owner_info":
@@ -185,7 +185,7 @@ async def cb_checker(bot, query: CallbackQuery):
             await query.message.edit_text(
                 text=(OWNER_INFO),
                 reply_markup=reply_markup,
-                parse_mode='html'
+                parse_mode=enums.ParseMode.HTML
             )
 
         elif query.data == "movie_mal_txt":
@@ -198,7 +198,7 @@ async def cb_checker(bot, query: CallbackQuery):
                     await query.message.edit_text(
                         text=(MOVIE_MAL_TXT.format(query.from_user.mention)),
                         reply_markup=reply_markup,
-                        parse_mode='html'
+                        parse_mode=enums.ParseMode.HTML
                     )
                 
                 else:
@@ -216,7 +216,7 @@ async def cb_checker(bot, query: CallbackQuery):
                     await query.message.edit_text(
                         text=(MOVIE_ENG_TXT.format(query.from_user.mention)),
                         reply_markup=reply_markup,
-                        parse_mode='html'
+                        parse_mode=enums.ParseMode.HTML
                     )
                 
                 else:
@@ -237,7 +237,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 photo=(MV_PIC),
                 caption=(MV_TXT),
                 reply_markup=reply_markup,
-                parse_mode='html'
+                parse_mode=enums.ParseMode.HTML
             )           
 
 @tgbot.on_message(filters.command("howilook"))
@@ -245,7 +245,7 @@ async def howilook_message(bot, message):
     await message.reply_photo(
             photo=random.choice(LOOK_IMG),
             caption=(LOOK_TXT.format(message.from_user.first_name)),
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
 )
 
 # EMOJI CONSTANTS
