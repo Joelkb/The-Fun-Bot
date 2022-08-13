@@ -94,9 +94,3 @@ FSUB = """
 
 COMMAND_USER = """
 <b>Hey {}, This is an Admin command, Not for you!</b>"""
-
-WAIT_MSG = """
-<b>Processing ...</b>"""
-
-REPLY_ERROR = """
-<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
