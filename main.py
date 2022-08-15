@@ -299,25 +299,25 @@ async def calculator(bot, message):
     oper = ['+', '-', '/', '*', '%']
     await message.reply_text(f"Hey {message.from_user.mention}, Give me the first number for your calculation.")
     x1=input
-    await bot.send_message(text="Okay!, Give me the second number for your calculation.")
+    await bot.send_message(message.chat.id, text="Okay!, Give me the second number for your calculation.")
     x2=input
-    await bot.send_message(text="Okay!, What operation do you want me to do?\nUse '+' for addition.\nUse '-' for substraction.\nUse '/' for division.\nUse '*' for multiplication.\nUse '%' for checking the reminder.")
+    await bot.send_message(message.chat.id, text="Okay!, What operation do you want me to do?\nUse '+' for addition.\nUse '-' for substraction.\nUse '/' for division.\nUse '*' for multiplication.\nUse '%' for checking the reminder.")
     x3=input
     if x3 == '+':
         ans=x1+x2
-        await bot.send_message(text="Your answer is "+str(ans))
+        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
     elif x3 == '-':
         ans=x1-x2
-        await bot.send_message(text="Your answer is "+str(ans))
+        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
     elif x3 == '/':
         ans=x1/x2
-        await bot.send_message(text="Your answer is "+str(ans))
+        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
     elif x3 == '*':
         ans=x1*x2
-        await bot.send_message(text="Your answer is "+str(ans))
+        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
     elif x3 == '%':
         ans=x1%x2
-        await bot.send_message(text="Your answer is "+str(ans))
+        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
     elif x3 not in oper:
-        await bot.send_message(text="Please provide a valid operation.")
+        await bot.send_message(message.chat.id, text="Please provide a valid operation.")
 tgbot.run()
