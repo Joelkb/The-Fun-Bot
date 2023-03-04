@@ -1,4 +1,4 @@
-from pyrogram import Client, filters, enums
+from pyrogram import filters, enums
 from info import START_IMG, LOOK_IMG, MOVIE_PIC, COMMAND_HAND_LER, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
@@ -8,16 +8,7 @@ from urllib.parse import quote
 import random
 import os
 import asyncio
-
-tgbot=Client(
-    name=SESSION,
-    bot_token=BOT_TOKEN,
-    api_id=API_ID,
-    api_hash=API_HASH,
-    workers=50,
-    plugins={"root": "plugins"},
-    sleep_threshold=5
-)
+from .bot import tgbot
 
 @tgbot.on_message(filters.command("start"))
 async def start_message(bot, message):
