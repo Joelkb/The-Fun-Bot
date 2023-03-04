@@ -29,6 +29,6 @@ BOT_TOKEN = environ.get("BOT_TOKEN", "")
 
 MV_PIC = environ.get("MV_PIC", "https://telegra.ph/file/7c924bffb69a01d834ba4.jpg")
 
-FSub_Channel = environ.get("FSub_Channel", "")
+FSub_Channel = int(environ.get("FSub_Channel", ""))
 
 SESSION = environ.get("SESSION", "") 
