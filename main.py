@@ -13,7 +13,10 @@ tgbot=Client(
     name=SESSION,
     bot_token=BOT_TOKEN,
     api_id=API_ID,
-    api_hash=API_HASH
+    api_hash=API_HASH,
+    workers=50,
+    plugins={"root": "plugins"},
+    sleep_threshold=5
 )
 
 @tgbot.on_message(filters.command("start"))
