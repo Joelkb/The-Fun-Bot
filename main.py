@@ -1,13 +1,15 @@
 from pyrogram import Client, filters, enums
-from info import START_IMG, LOOK_IMG, MOVIE_PIC, COMMAND_HAND_LER, ADMINS, MV_PIC, FSub_Channel
+from info import START_IMG, LOOK_IMG, MOVIE_PIC, COMMAND_HAND_LER, ADMINS, MV_PIC, FSub_Channel, U_NAME
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
-from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified
+from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified, ChatAdminRequired
 from plugins.fun_strings import FUN_STRINGS
 from urllib.parse import quote
 import random
 import os
 import asyncio
+import logging
+logger = logging.getLogger(__name__)
 
 
 @Client.on_message(filters.command("start"))
@@ -18,14 +20,18 @@ async def start_message(bot, message):
             if user.status == "kicked out":
                 await message.reply_text(KICKED.format(message.from_user.mention))
                 return
+        except ChatAdminRequired:
+            logger.error("Make sure Bot is admin in Forcesub channel")
+            return
         except UserNotParticipant:
+            chat = await bot.create_chat_invite_link(int(FSub_Channel))
             await message.reply_text(
                 text=(FSUB.format(message.from_user.mention)),
                 reply_markup=InlineKeyboardMarkup(
                   [[
-                    InlineKeyboardButton("Join Our Updates Channel 📢", url=f"t.me/{FSub_Channel}")
+                    InlineKeyboardButton("Join Our Updates Channel 📢", url=chat.invite_link)
                  ],[
-                    InlineKeyboardButton("Try Again 🔄", url="t.me/the_fun_mallu_bot?start")
+                    InlineKeyboardButton("Try Again 🔄", url="t.me/{U_NAME}?start")
                   ]]
                 )
             )
@@ -46,7 +52,7 @@ async def start_message(bot, message):
             caption=(START_TXT.format(message.from_user.mention)),
             reply_markup=InlineKeyboardMarkup(
                       [[
-                        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
+                        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/{U_NAME}?startgroup=true')
                      ],[
                         InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', callback_data="owner_info"),
                         InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', callback_data="movie_grp")
@@ -54,7 +60,7 @@ async def start_message(bot, message):
                         InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
                         InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
                      ],[
-                        InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
+                        InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+vu3FBEXifbRhNTk9')
                       ]]
             
             ),
@@ -92,7 +98,7 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "start":
             buttons = [[
-                        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/auto_m4_mallumovies_bot?startgroup=true')
+                        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'https://t.me/{U_NAME}?startgroup=true')
                      ],[
                         InlineKeyboardButton('🤴ʙᴏᴛ ᴏᴡɴᴇʀ🤴', callback_data="owner_info"),
                         InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ🍿', callback_data="movie_grp")
@@ -100,7 +106,7 @@ async def cb_checker(bot, query: CallbackQuery):
                         InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
                         InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
                      ],[
-                        InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+LJRsBp82HiJhNDhl')
+                        InlineKeyboardButton('💥 ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 💥', url='https://t.me/+vu3FBEXifbRhNTk9')
                       ]]
             
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -220,10 +226,10 @@ async def cb_checker(bot, query: CallbackQuery):
 
         elif query.data == "movie_grp":
             btn = [[
-                    InlineKeyboardButton("ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ɢʀᴏᴜᴘ", url="https://t.me/+5olNhPeyW31jYjBl"),
-                    InlineKeyboardButton("ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+asOwq8hpxSgwOTY9")
+                    InlineKeyboardButton("ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ɢʀᴏᴜᴘ", url="https://t.me/+jMyhIRhcp9EyZmJl"),
+                    InlineKeyboardButton("ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+vu3FBEXifbRhNTk9")
                  ],[
-                    InlineKeyboardButton("ɴᴇᴡ ʀᴇʟᴇᴀsᴇs", url="https://t.me/+1Zr7U1TCCMw2YmJl"),
+                    InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", url="https://t.me/+GOFte-Rz2tcxODg1"),
                     InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_data")
                   ]]
             reply_markup = InlineKeyboardMarkup(btn)
@@ -265,12 +271,13 @@ async def inline(bot, query: InlineQuery):
                     message_text = (MV_TXT)
                 ),
                 reply_markup = InlineKeyboardMarkup(
-                [[
-                  InlineKeyboardButton("ᴊᴏɪɴ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ", url="https://t.me/+5olNhPeyW31jYjBl"),
-                  InlineKeyboardButton("ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+asOwq8hpxSgwOTY9")
-               ],[
-                  InlineKeyboardButton("ɴᴇᴡ ʀᴇʟᴇᴀsᴇs", url="https://t.me/+1Zr7U1TCCMw2YmJl")
-                ]]
+                    [[
+                      InlineKeyboardButton("ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ᴊᴏɪɴ ɢʀᴏᴜᴘ", url="https://t.me/+jMyhIRhcp9EyZmJl"),
+                      InlineKeyboardButton("ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ", url="https://t.me/+vu3FBEXifbRhNTk9")
+                   ],[
+                      InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", url="https://t.me/+GOFte-Rz2tcxODg1"),
+                      InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_data")
+                    ]]
                 )
             )
         ],
@@ -287,3 +294,11 @@ async def trash_handler(bot, message):
             await message.delete()
         except AttributeError:
             await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
+
+@Client.on_message(filters.command('logs') & filters.user(ADMINS))
+async def log_file(bot, message):
+    """Send log file"""
+    try:
+        await message.reply_document('TelegramBot.txt')
+    except Exception as e:
+        await message.reply(str(e))
