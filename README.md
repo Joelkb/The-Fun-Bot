@@ -47,6 +47,10 @@
 </p>
 </details>
 
+<details><summary>Deploy On Railway</summary>
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/gCpEqX?referralCode=gL99Bi)
+</details>
+
 <hr>
 
 <p align="center">
