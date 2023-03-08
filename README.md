@@ -48,7 +48,9 @@
 </details>
 
 <details><summary>Deploy On Railway</summary>
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/gCpEqX?referralCode=gL99Bi)
+<a href="https://railway.app/template/gCpEqX?referralCode=gL99Bi">
+<img src="https://railway.app/button.svg" alt="Deploy">
+</a>
 </details>
 
 <hr>
