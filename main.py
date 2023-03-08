@@ -1,5 +1,5 @@
 from pyrogram import Client, filters, enums
-from info import START_IMG, LOOK_IMG, MOVIE_PIC, COMMAND_HAND_LER, ADMINS, API_HASH, API_ID, BOT_TOKEN, MV_PIC, FSub_Channel, SESSION
+from info import START_IMG, LOOK_IMG, MOVIE_PIC, COMMAND_HAND_LER, ADMINS, MV_PIC, FSub_Channel
 from script import START_TXT, LOOK_TXT, HELP_TXT, ABOUT_TXT, SOURCE_TXT, MOVIE_ENG_TXT, MOVIE_MAL_TXT, OWNER_INFO, MV_TXT, KICKED, FSUB
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from pyrogram.errors import UserNotParticipant, FloodWait, MessageNotModified
@@ -9,14 +9,8 @@ import random
 import os
 import asyncio
 
-tgbot=Client(
-    name=SESSION,
-    bot_token=BOT_TOKEN,
-    api_id=API_ID,
-    api_hash=API_HASH
-)
 
-@tgbot.on_message(filters.command("start"))
+@Client.on_message(filters.command("start"))
 async def start_message(bot, message):
     if FSub_Channel:
         try:
@@ -70,7 +64,7 @@ async def start_message(bot, message):
 
 
 
-@tgbot.on_message(filters.regex("movie") | filters.regex("Movie") & filters.group)
+@Client.on_message(filters.regex("movie") | filters.regex("Movie") & filters.group)
 async def filter_handler(bot, message):
     if message.from_user.id not in ADMINS:
         await message.reply_photo(
@@ -91,7 +85,7 @@ async def filter_handler(bot, message):
 
 
 
-@tgbot.on_callback_query()
+@Client.on_callback_query()
 async def cb_checker(bot, query: CallbackQuery):
         if query.data == "close_data":
             await query.message.delete()
@@ -240,7 +234,7 @@ async def cb_checker(bot, query: CallbackQuery):
                 parse_mode=enums.ParseMode.HTML
             )           
 
-@tgbot.on_message(filters.command("howilook"))
+@Client.on_message(filters.command("howilook"))
 async def howilook_message(bot, message):
     await message.reply_photo(
             photo=random.choice(LOOK_IMG),
@@ -248,7 +242,7 @@ async def howilook_message(bot, message):
             parse_mode=enums.ParseMode.HTML
 )
 
-@tgbot.on_message(
+@Client.on_message(
     filters.command("fun", COMMAND_HAND_LER)
 )
 async def runs(_, message):
@@ -259,7 +253,7 @@ async def runs(_, message):
     else:
         await message.reply_text(effective_string)
 
-@tgbot.on_inline_query()
+@Client.on_inline_query()
 async def inline(bot, query: InlineQuery):
     await query.answer(
         results = [
@@ -283,7 +277,7 @@ async def inline(bot, query: InlineQuery):
         cache_time = 0
     )
 
-@tgbot.on_message(filters.command("trash") & filters.group)
+@Client.on_message(filters.command("trash") & filters.group)
 async def trash_handler(bot, message):
     if message.from_user.id not in ADMINS:
         await message.reply_text("<b>Hey bro, This is an Admin Command !</b>")
@@ -293,31 +287,3 @@ async def trash_handler(bot, message):
             await message.delete()
         except AttributeError:
             await message.reply_text("<b>Hey, Use this command as a reply to any message...</b>")
-
-@tgbot.on_message(filters.command("calc"))
-async def calculator(bot, message):
-    oper = ['+', '-', '/', '*', '%']
-    await message.reply_text(f"Hey {message.from_user.mention}, Give me the first number for your calculation.")
-    x1=input
-    await bot.send_message(message.chat.id, text="Okay!, Give me the second number for your calculation.")
-    x2=input
-    await bot.send_message(message.chat.id, text="Okay!, What operation do you want me to do?\nUse '+' for addition.\nUse '-' for substraction.\nUse '/' for division.\nUse '*' for multiplication.\nUse '%' for checking the reminder.")
-    x3=input
-    if x3 == '+':
-        ans=x1+x2
-        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
-    elif x3 == '-':
-        ans=x1-x2
-        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
-    elif x3 == '/':
-        ans=x1/x2
-        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
-    elif x3 == '*':
-        ans=x1*x2
-        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
-    elif x3 == '%':
-        ans=x1%x2
-        await bot.send_message(message.chat.id, text="Your answer is "+str(ans))
-    elif x3 not in oper:
-        await bot.send_message(message.chat.id, text="Please provide a valid operation.")
-tgbot.run()
