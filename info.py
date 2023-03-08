@@ -27,8 +27,14 @@ API_HASH = environ.get("API_HASH", "")
 
 BOT_TOKEN = environ.get("BOT_TOKEN", "")
 
-MV_PIC = environ.get("MV_PIC", "https://telegra.ph/file/7c924bffb69a01d834ba4.jpg")
+MV_PIC = environ.get("MV_PIC", "https://telegra.ph/file/76dc7b46a4e9003759e87.jpg")
 
 FSub_Channel = int(environ.get("FSub_Channel", ""))
 
 SESSION = environ.get("SESSION", "") 
+
+NJAN = None
+
+U_NAME = None
+
+B_NAME = None
